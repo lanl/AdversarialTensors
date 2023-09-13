@@ -1,0 +1,582 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="Python" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdversarialTensors.btensor.svd &#8212; AdversarialTensors 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/AdversarialTensors/btensor/svd';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdversarialTensors 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for AdversarialTensors.btensor.svd</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<div class="viewcode-block" id="svd_flip"><a class="viewcode-back" href="../../../AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.svd_flip">[docs]</a><span class="k">def</span> <span class="nf">svd_flip</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">u_based_decision</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sign correction to ensure deterministic output from SVD.</span>
+<span class="sd">    Adjusts the columns of u and the rows of v such that the loadings in the</span>
+<span class="sd">    columns in u that are largest in absolute value are always positive.</span>
+<span class="sd">    This function is borrowed from scikit-learn/utils/extmath.py</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    U : ndarray</span>
+<span class="sd">        u and v are the output of SVD</span>
+<span class="sd">    V : ndarray</span>
+<span class="sd">        u and v are the output of SVD</span>
+<span class="sd">    u_based_decision : boolean, (default=True)</span>
+<span class="sd">        If True, use the columns of u as the basis for sign flipping.</span>
+<span class="sd">        Otherwise, use the rows of v. The choice of which variable to base the</span>
+<span class="sd">        decision on is generally algorithm dependent.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    u_adjusted, v_adjusted : arrays with the same dimensions as the input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">batch_dim</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">u_based_decision</span><span class="p">:</span>
+        <span class="c1"># columns of U, rows of V</span>
+        <span class="n">max_abs_cols</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">U</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">selected_max_el</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_abs_cols</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">signs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">selected_max_el</span><span class="p">)</span>
+        <span class="n">U</span> <span class="o">=</span> <span class="n">U</span> <span class="o">*</span> <span class="n">signs</span>
+        <span class="k">if</span> <span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="n">signs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">signs</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_dim</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">U</span><span class="o">.</span><span class="n">device</span><span class="p">)),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="n">V</span> <span class="o">*</span> <span class="n">signs</span><span class="p">[:,:,:</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># rows of V, columns of U</span>
+        <span class="n">max_abs_cols</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">selected_max_el</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_abs_cols</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">signs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">selected_max_el</span><span class="p">)</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="n">V</span> <span class="o">*</span> <span class="n">signs</span>
+        <span class="k">if</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">signs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">signs</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_dim</span><span class="p">,</span><span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">U</span><span class="o">.</span><span class="n">device</span><span class="p">)),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">U</span> <span class="o">=</span> <span class="n">U</span> <span class="o">*</span> <span class="n">signs</span><span class="p">[:,:</span><span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],:]</span>
+
+    <span class="k">return</span> <span class="n">U</span><span class="p">,</span> <span class="n">V</span></div>
+
+<div class="viewcode-block" id="svd_checks"><a class="viewcode-back" href="../../../AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.svd_checks">[docs]</a><span class="k">def</span> <span class="nf">svd_checks</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">n_eigenvecs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Runs common checks to all of the SVD methods.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    matrix : 3D-array</span>
+<span class="sd">    n_eigenvecs : int, optional, default is None</span>
+<span class="sd">        if specified, number of eigen[vectors-values] to return</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    n_eigenvecs : int</span>
+<span class="sd">        the number of eigenvectors to solve for</span>
+<span class="sd">    min_dim : int</span>
+<span class="sd">        the minimum dimension of matrix</span>
+<span class="sd">    max_dim : int</span>
+<span class="sd">        the maximum dimension of matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check that matrix is... a matrix!</span>
+    <span class="k">if</span> <span class="n">matrix</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;batch of matricies is expected. matrix.ndim is </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span><span class="si">}</span><span class="s2"> != 3&quot;</span><span class="p">)</span>
+
+    <span class="n">batch_dim</span><span class="p">,</span> <span class="n">dim_1</span><span class="p">,</span> <span class="n">dim_2</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">min_dim</span><span class="p">,</span> <span class="n">max_dim</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dim_1</span><span class="p">,</span> <span class="n">dim_2</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">dim_1</span><span class="p">,</span> <span class="n">dim_2</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n_eigenvecs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">n_eigenvecs</span> <span class="o">=</span> <span class="n">max_dim</span>
+
+    <span class="k">if</span> <span class="n">n_eigenvecs</span> <span class="o">&gt;</span> <span class="n">max_dim</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Trying to compute SVD with n_eigenvecs=</span><span class="si">{</span><span class="n">n_eigenvecs</span><span class="si">}</span><span class="s2">, which is larger &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;than max(matrix.shape)=</span><span class="si">{</span><span class="n">max_dim</span><span class="si">}</span><span class="s2">. Setting n_eigenvecs to </span><span class="si">{</span><span class="n">max_dim</span><span class="si">}</span><span class="s2">.&quot;</span>
+        <span class="p">)</span>
+        <span class="n">n_eigenvecs</span> <span class="o">=</span> <span class="n">max_dim</span>
+
+    <span class="k">return</span> <span class="n">n_eigenvecs</span><span class="p">,</span> <span class="n">min_dim</span><span class="p">,</span> <span class="n">max_dim</span></div>
+
+
+<div class="viewcode-block" id="truncated_svd"><a class="viewcode-back" href="../../../AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.truncated_svd">[docs]</a><span class="k">def</span> <span class="nf">truncated_svd</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">n_eigenvecs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes a truncated SVD on `matrix` using the backends&#39;s standard SVD</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    matrix : 2D-array</span>
+<span class="sd">    n_eigenvecs : int, optional, default is None</span>
+<span class="sd">        if specified, number of eigen[vectors-values] to return</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    U : 2D-array</span>
+<span class="sd">        of shape (matrix.shape[0], n_eigenvecs)</span>
+<span class="sd">        contains the right singular vectors</span>
+<span class="sd">    S : 1D-array</span>
+<span class="sd">        of shape (n_eigenvecs, )</span>
+<span class="sd">        contains the singular values of `matrix`</span>
+<span class="sd">    V : 2D-array</span>
+<span class="sd">        of shape (n_eigenvecs, matrix.shape[1])</span>
+<span class="sd">        contains the left singular vectors</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_eigenvecs</span><span class="p">,</span> <span class="n">min_dim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">svd_checks</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">n_eigenvecs</span><span class="o">=</span><span class="n">n_eigenvecs</span><span class="p">)</span>
+    <span class="n">full_matrices</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">n_eigenvecs</span> <span class="o">&gt;</span> <span class="n">min_dim</span> <span class="k">else</span> <span class="kc">False</span>
+    <span class="n">some</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">full_matrices</span>
+    <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">some</span><span class="o">=</span><span class="n">some</span><span class="p">)</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">n_eigenvecs</span><span class="p">],</span> <span class="n">S</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_eigenvecs</span><span class="p">],</span> <span class="n">V</span><span class="p">[:,</span> <span class="p">:</span><span class="n">n_eigenvecs</span><span class="p">,</span> <span class="p">:]</span></div>
+
+<div class="viewcode-block" id="randomized_svd"><a class="viewcode-back" href="../../../AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.randomized_svd">[docs]</a><span class="k">def</span> <span class="nf">randomized_svd</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="p">,</span>
+    <span class="n">n_eigenvecs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">n_oversamples</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">n_iter</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes a truncated randomized SVD.</span>
+
+<span class="sd">    If `n_eigenvecs` is specified, sparse eigendecomposition is used on</span>
+<span class="sd">    either matrix.dot(matrix.T) or matrix.T.dot(matrix).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    matrix : tensor</span>
+<span class="sd">        A 2D tensor.</span>
+<span class="sd">    n_eigenvecs : int, optional, default is None</span>
+<span class="sd">        If specified, number of eigen[vectors-values] to return.</span>
+<span class="sd">    n_oversamples: int, optional, default = 5</span>
+<span class="sd">        rank overestimation value for finiding subspace with better allignment</span>
+<span class="sd">    n_iter: int, optional, default = 2</span>
+<span class="sd">        number of power iterations for the `randomized_range_finder` subroutine</span>
+<span class="sd">    random_state: {None, int, np.random.RandomState}</span>
+<span class="sd">    **kwargs : optional</span>
+<span class="sd">        kwargs are used to absorb the difference of parameters among the other SVD functions</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    U : 2-D tensor, shape (matrix.shape[0], n_eigenvecs)</span>
+<span class="sd">        Contains the right singular vectors</span>
+<span class="sd">    S : 1-D tensor, shape (n_eigenvecs, )</span>
+<span class="sd">        Contains the singular values of `matrix`</span>
+<span class="sd">    V : 2-D tensor, shape (n_eigenvecs, matrix.shape[1])</span>
+<span class="sd">        Contains the left singular vectors</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function is implemented based on Algorith 5.1 in `Finding structure with randomness:</span>
+<span class="sd">    Probabilistic algorithms for constructing approximate matrix decompositions`</span>
+<span class="sd">    - Halko et al (2009)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_eigenvecs</span><span class="p">,</span> <span class="n">min_dim</span><span class="p">,</span> <span class="n">max_dim</span> <span class="o">=</span> <span class="n">svd_checks</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">n_eigenvecs</span><span class="o">=</span><span class="n">n_eigenvecs</span><span class="p">)</span>
+
+    <span class="n">batch_dim</span><span class="p">,</span> <span class="n">dim_1</span><span class="p">,</span> <span class="n">dim_2</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">n_dims</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">n_eigenvecs</span> <span class="o">+</span> <span class="n">n_oversamples</span><span class="p">,</span> <span class="n">max_dim</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">dim_1</span> <span class="o">&gt;</span> <span class="n">dim_2</span>
+        <span class="ow">and</span> <span class="n">n_eigenvecs</span> <span class="o">&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_dim</span><span class="p">,</span> <span class="n">n_dims</span><span class="p">)</span>
+        <span class="ow">or</span> <span class="n">dim_1</span> <span class="o">&lt;</span> <span class="n">dim_2</span>
+        <span class="ow">and</span> <span class="n">n_eigenvecs</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_dim</span><span class="p">,</span> <span class="n">n_dims</span><span class="p">)</span>
+    <span class="p">):</span>
+        <span class="c1"># transpose matrix to keep the reduced matrix shape minimal</span>
+        <span class="n">matrix_T</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">Q</span> <span class="o">=</span> <span class="n">randomized_range_finder</span><span class="p">(</span>
+            <span class="n">matrix_T</span><span class="p">,</span> <span class="n">n_dims</span><span class="o">=</span><span class="n">n_dims</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span>
+        <span class="p">)</span>
+        <span class="n">Q_H</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">matrix_reduced</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Q_H</span><span class="p">,</span> <span class="n">matrix_T</span><span class="p">))</span>
+        <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">truncated_svd</span><span class="p">(</span><span class="n">matrix_reduced</span><span class="p">,</span> <span class="n">n_eigenvecs</span><span class="o">=</span><span class="n">n_eigenvecs</span><span class="p">)</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Q</span> <span class="o">=</span> <span class="n">randomized_range_finder</span><span class="p">(</span>
+            <span class="n">matrix</span><span class="p">,</span> <span class="n">n_dims</span><span class="o">=</span><span class="n">n_dims</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span>
+        <span class="p">)</span>
+        <span class="n">Q_H</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">matrix_reduced</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Q_H</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+        <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">truncated_svd</span><span class="p">(</span><span class="n">matrix_reduced</span><span class="p">,</span> <span class="n">n_eigenvecs</span><span class="o">=</span><span class="n">n_eigenvecs</span><span class="p">)</span>
+        <span class="n">U</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span></div>
+
+<div class="viewcode-block" id="randomized_range_finder"><a class="viewcode-back" href="../../../AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.randomized_range_finder">[docs]</a><span class="k">def</span> <span class="nf">randomized_range_finder</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">n_dims</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes an orthonormal matrix (Q) whose range approximates the range of A,  i.e., Q Q^H A ≈ A</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    A : 3D-array</span>
+<span class="sd">    n_dims : int, dimension of the returned subspace</span>
+<span class="sd">    n_iter : int, number of power iterations to conduct (default = 2)</span>
+<span class="sd">    random_state: {None, int, np.random.RandomState}</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Q : 3D-array</span>
+<span class="sd">        of shape (batch, A.shape[0], min(n_dims, A.shape[0], A.shape[1]))</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function is implemented based on Algorith 4.4 in `Finding structure with randomness:</span>
+<span class="sd">    Probabilistic algorithms for constructing approximate matrix decompositions`</span>
+<span class="sd">    - Halko et al (2009)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="n">batch</span><span class="p">,</span> <span class="n">dim_1</span><span class="p">,</span> <span class="n">dim_2</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">dim_2</span><span class="p">,</span> <span class="n">n_dims</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">Q</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+
+    <span class="c1"># Perform power iterations when spectrum decays slowly</span>
+    <span class="n">A_H</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iter</span><span class="p">):</span>
+        <span class="n">Q</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A_H</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+        <span class="n">Q</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Q</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">Q</span></div>
+
+<span class="n">SVD_FUNS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;truncated_svd&quot;</span><span class="p">,</span> <span class="s2">&quot;randomized_svd&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="svd_interface"><a class="viewcode-back" href="../../../AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.svd_interface">[docs]</a><span class="k">def</span> <span class="nf">svd_interface</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;truncated_svd&quot;</span><span class="p">,</span>
+    <span class="n">n_eigenvecs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">flip_sign</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">u_based_flip_sign</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">non_negative</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">n_iter_mask_imputation</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Dispatching function to various SVD algorithms, alongside additional</span>
+<span class="sd">    properties such as resolving sign invariance, imputation, and non-negativity.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    matrix : tensor</span>
+<span class="sd">        A 2D tensor.</span>
+<span class="sd">    method : str, default is &#39;truncated_svd&#39;</span>
+<span class="sd">        Function to use to compute the SVD, acceptable values in tensorly.SVD_FUNS or a callable.</span>
+<span class="sd">    n_eigenvecs : int, optional, default is None</span>
+<span class="sd">        If specified, number of eigen[vectors-values] to return.</span>
+<span class="sd">    flip_sign : bool, optional, default is True</span>
+<span class="sd">        Whether to resolve the sign indeterminacy of SVD.</span>
+<span class="sd">    u_based_flip_sign : bool, optional, default is True</span>
+<span class="sd">        Whether the sign indeterminacy should be resolved using U (vs. V).</span>
+<span class="sd">    non_negative : bool, optional, default is False</span>
+<span class="sd">        Whether to make the SVD results non-negative.</span>
+<span class="sd">    nn_type : str, default is &#39;nndsvd&#39;</span>
+<span class="sd">        Algorithm to use for converting U to be non-negative.</span>
+<span class="sd">    mask : tensor, default is None.</span>
+<span class="sd">        Array of booleans with the same shape as ``matrix``. Should be 0 where</span>
+<span class="sd">        the values are missing and 1 everywhere else. None if nothing is missing.</span>
+<span class="sd">    n_iter_mask_imputation : int, default is 5</span>
+<span class="sd">        Number of repetitions to apply in missing value imputation.</span>
+<span class="sd">    **kwargs : optional</span>
+<span class="sd">        Arguments passed along to individual SVD algorithms.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    U : 2-D tensor, shape (matrix.shape[0], n_eigenvecs)</span>
+<span class="sd">        Contains the right singular vectors of `matrix`</span>
+<span class="sd">    S : 1-D tensor, shape (n_eigenvecs, )</span>
+<span class="sd">        Contains the singular values of `matrix`</span>
+<span class="sd">    V : 2-D tensor, shape (n_eigenvecs, matrix.shape[1])</span>
+<span class="sd">        Contains the left singular vectors of `matrix`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;truncated_svd&quot;</span><span class="p">:</span>
+        <span class="n">svd_fun</span> <span class="o">=</span> <span class="n">truncated_svd</span>
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;randomized_svd&quot;</span><span class="p">:</span>
+        <span class="n">svd_fun</span> <span class="o">=</span> <span class="n">randomized_svd</span>
+    <span class="k">elif</span> <span class="nb">callable</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+        <span class="n">svd_fun</span> <span class="o">=</span> <span class="n">method</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Got svd=</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">. However, the possible choices are </span><span class="si">{</span><span class="n">SVD_FUNS</span><span class="si">}</span><span class="s2"> or to pass a callable.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">svd_fun</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">n_eigenvecs</span><span class="o">=</span><span class="n">n_eigenvecs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">flip_sign</span><span class="p">:</span>
+        <span class="n">U</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">svd_flip</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">u_based_decision</span><span class="o">=</span><span class="n">u_based_flip_sign</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manish Bhattarai, Mehmet Kaymak, Ben Nebgen, Kim Rasmussen, Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright Los Alamos National Laboratory.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

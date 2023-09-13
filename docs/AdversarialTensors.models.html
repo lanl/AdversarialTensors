@@ -1,0 +1,1377 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="Python" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>AdversarialTensors.models package &#8212; AdversarialTensors 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'AdversarialTensors.models';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdversarialTensors 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/AdversarialTensors.models.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AdversarialTensors.models package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.densenet">AdversarialTensors.models.densenet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.DenseNet"><code class="docutils literal notranslate"><span class="pre">DenseNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.DenseNet.forward"><code class="docutils literal notranslate"><span class="pre">DenseNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.DenseNet.training"><code class="docutils literal notranslate"><span class="pre">DenseNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.densenet121"><code class="docutils literal notranslate"><span class="pre">densenet121()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.densenet161"><code class="docutils literal notranslate"><span class="pre">densenet161()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.densenet169"><code class="docutils literal notranslate"><span class="pre">densenet169()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.googlenet">AdversarialTensors.models.googlenet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.GoogLeNet"><code class="docutils literal notranslate"><span class="pre">GoogLeNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.GoogLeNet.forward"><code class="docutils literal notranslate"><span class="pre">GoogLeNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.GoogLeNet.training"><code class="docutils literal notranslate"><span class="pre">GoogLeNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.googlenet"><code class="docutils literal notranslate"><span class="pre">googlenet()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.inception">AdversarialTensors.models.inception module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.Inception3"><code class="docutils literal notranslate"><span class="pre">Inception3</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.Inception3.forward"><code class="docutils literal notranslate"><span class="pre">Inception3.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.Inception3.training"><code class="docutils literal notranslate"><span class="pre">Inception3.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.inception_v3"><code class="docutils literal notranslate"><span class="pre">inception_v3()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.mobilenetv2">AdversarialTensors.models.mobilenetv2 module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2"><code class="docutils literal notranslate"><span class="pre">MobileNetV2</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2.forward"><code class="docutils literal notranslate"><span class="pre">MobileNetV2.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2.training"><code class="docutils literal notranslate"><span class="pre">MobileNetV2.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.mobilenet_v2"><code class="docutils literal notranslate"><span class="pre">mobilenet_v2()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.resnet">AdversarialTensors.models.resnet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.ResNet"><code class="docutils literal notranslate"><span class="pre">ResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.ResNet.forward"><code class="docutils literal notranslate"><span class="pre">ResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.ResNet.training"><code class="docutils literal notranslate"><span class="pre">ResNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.resnet18"><code class="docutils literal notranslate"><span class="pre">resnet18()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.resnet34"><code class="docutils literal notranslate"><span class="pre">resnet34()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.resnet50"><code class="docutils literal notranslate"><span class="pre">resnet50()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.resnet_orig">AdversarialTensors.models.resnet_orig module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock"><code class="docutils literal notranslate"><span class="pre">BasicBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock.expansion"><code class="docutils literal notranslate"><span class="pre">BasicBlock.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock.forward"><code class="docutils literal notranslate"><span class="pre">BasicBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock.training"><code class="docutils literal notranslate"><span class="pre">BasicBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck"><code class="docutils literal notranslate"><span class="pre">Bottleneck</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck.expansion"><code class="docutils literal notranslate"><span class="pre">Bottleneck.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck.forward"><code class="docutils literal notranslate"><span class="pre">Bottleneck.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck.training"><code class="docutils literal notranslate"><span class="pre">Bottleneck.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.expansion"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.forward"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.training"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigPreActResNet18"><code class="docutils literal notranslate"><span class="pre">OrigPreActResNet18()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet101"><code class="docutils literal notranslate"><span class="pre">OrigResNet101()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet152"><code class="docutils literal notranslate"><span class="pre">OrigResNet152()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet18"><code class="docutils literal notranslate"><span class="pre">OrigResNet18()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet34"><code class="docutils literal notranslate"><span class="pre">OrigResNet34()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet50"><code class="docutils literal notranslate"><span class="pre">OrigResNet50()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock"><code class="docutils literal notranslate"><span class="pre">PreActBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock.expansion"><code class="docutils literal notranslate"><span class="pre">PreActBlock.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock.forward"><code class="docutils literal notranslate"><span class="pre">PreActBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock.training"><code class="docutils literal notranslate"><span class="pre">PreActBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.expansion"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.forward"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.training"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.expansion"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.forward"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.training"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActResNet"><code class="docutils literal notranslate"><span class="pre">PreActResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActResNet.forward"><code class="docutils literal notranslate"><span class="pre">PreActResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActResNet.training"><code class="docutils literal notranslate"><span class="pre">PreActResNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.ResNet"><code class="docutils literal notranslate"><span class="pre">ResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.ResNet.forward"><code class="docutils literal notranslate"><span class="pre">ResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.ResNet.training"><code class="docutils literal notranslate"><span class="pre">ResNet.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.vgg">AdversarialTensors.models.vgg module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.VGG"><code class="docutils literal notranslate"><span class="pre">VGG</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.VGG.forward"><code class="docutils literal notranslate"><span class="pre">VGG.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.VGG.training"><code class="docutils literal notranslate"><span class="pre">VGG.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg11_bn"><code class="docutils literal notranslate"><span class="pre">vgg11_bn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg13_bn"><code class="docutils literal notranslate"><span class="pre">vgg13_bn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg16_bn"><code class="docutils literal notranslate"><span class="pre">vgg16_bn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg19_bn"><code class="docutils literal notranslate"><span class="pre">vgg19_bn()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.wide_resnet">AdversarialTensors.models.wide_resnet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.BasicBlock"><code class="docutils literal notranslate"><span class="pre">BasicBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.BasicBlock.forward"><code class="docutils literal notranslate"><span class="pre">BasicBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.BasicBlock.training"><code class="docutils literal notranslate"><span class="pre">BasicBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.NetworkBlock"><code class="docutils literal notranslate"><span class="pre">NetworkBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.NetworkBlock.forward"><code class="docutils literal notranslate"><span class="pre">NetworkBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.NetworkBlock.training"><code class="docutils literal notranslate"><span class="pre">NetworkBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.WideResNet"><code class="docutils literal notranslate"><span class="pre">WideResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.WideResNet.forward"><code class="docutils literal notranslate"><span class="pre">WideResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.WideResNet.training"><code class="docutils literal notranslate"><span class="pre">WideResNet.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="adversarialtensors-models-package">
+<h1>AdversarialTensors.models package<a class="headerlink" href="#adversarialtensors-models-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-AdversarialTensors.models.densenet">
+<span id="adversarialtensors-models-densenet-module"></span><h2>AdversarialTensors.models.densenet module<a class="headerlink" href="#module-AdversarialTensors.models.densenet" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.densenet.DenseNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.densenet.</span></span><span class="sig-name descname"><span class="pre">DenseNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">growth_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(6,</span> <span class="pre">12,</span> <span class="pre">24,</span> <span class="pre">16)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_init_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/densenet.html#DenseNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.densenet.DenseNet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Densenet-BC model class, based on
+<a class="reference external" href="https://arxiv.org/pdf/1608.06993.pdf">&quot;Densely Connected Convolutional Networks&quot;</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>growth_rate</strong> (int) - how many filters to add each layer (<cite>k</cite> in paper) -- </p></li>
+<li><p><strong>block_config</strong> (<em>list</em><em> of </em><em>4 ints</em>) -- </p></li>
+<li><p><strong>num_init_features</strong> (<em>int</em>) -- </p></li>
+<li><p><strong>bn_size</strong> (<em>int</em>) -- (i.e. bn_size * k features in the bottleneck layer)</p></li>
+<li><p><strong>drop_rate</strong> (<em>float</em>) -- </p></li>
+<li><p><strong>num_classes</strong> (<em>int</em>) -- </p></li>
+</ul>
+</dd>
+</dl>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.densenet.DenseNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/densenet.html#DenseNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.densenet.DenseNet.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.densenet.DenseNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.densenet.DenseNet.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.densenet.densenet121">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.densenet.</span></span><span class="sig-name descname"><span class="pre">densenet121</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/densenet.html#densenet121"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.densenet.densenet121" title="Permalink to this definition">#</a></dt>
+<dd><p>Densenet-121 model from
+<a class="reference external" href="https://arxiv.org/pdf/1608.06993.pdf">&quot;Densely Connected Convolutional Networks&quot;</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.densenet.densenet161">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.densenet.</span></span><span class="sig-name descname"><span class="pre">densenet161</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/densenet.html#densenet161"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.densenet.densenet161" title="Permalink to this definition">#</a></dt>
+<dd><p>Densenet-161 model from
+<a class="reference external" href="https://arxiv.org/pdf/1608.06993.pdf">&quot;Densely Connected Convolutional Networks&quot;</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.densenet.densenet169">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.densenet.</span></span><span class="sig-name descname"><span class="pre">densenet169</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/densenet.html#densenet169"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.densenet.densenet169" title="Permalink to this definition">#</a></dt>
+<dd><p>Densenet-169 model from
+<a class="reference external" href="https://arxiv.org/pdf/1608.06993.pdf">&quot;Densely Connected Convolutional Networks&quot;</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models.googlenet">
+<span id="adversarialtensors-models-googlenet-module"></span><h2>AdversarialTensors.models.googlenet module<a class="headerlink" href="#module-AdversarialTensors.models.googlenet" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.googlenet.GoogLeNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.googlenet.</span></span><span class="sig-name descname"><span class="pre">GoogLeNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux_logits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/googlenet.html#GoogLeNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.googlenet.GoogLeNet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.googlenet.GoogLeNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/googlenet.html#GoogLeNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.googlenet.GoogLeNet.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.googlenet.GoogLeNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.googlenet.GoogLeNet.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.googlenet.googlenet">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.googlenet.</span></span><span class="sig-name descname"><span class="pre">googlenet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/googlenet.html#googlenet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.googlenet.googlenet" title="Permalink to this definition">#</a></dt>
+<dd><p>GoogLeNet (Inception v1) model architecture from
+<a class="reference external" href="http://arxiv.org/abs/1409.4842">&quot;Going Deeper with Convolutions&quot;</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+<li><p><strong>aux_logits</strong> (<em>bool</em>) -- If True, adds two auxiliary branches that can improve training.
+Default: <em>False</em> when pretrained is True otherwise <em>True</em></p></li>
+<li><p><strong>transform_input</strong> (<em>bool</em>) -- If True, preprocesses the input according to the method with which it
+was trained on ImageNet. Default: <em>False</em></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models.inception">
+<span id="adversarialtensors-models-inception-module"></span><h2>AdversarialTensors.models.inception module<a class="headerlink" href="#module-AdversarialTensors.models.inception" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.inception.Inception3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.inception.</span></span><span class="sig-name descname"><span class="pre">Inception3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux_logits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/inception.html#Inception3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.inception.Inception3" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.inception.Inception3.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/inception.html#Inception3.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.inception.Inception3.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.inception.Inception3.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.inception.Inception3.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.inception.inception_v3">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.inception.</span></span><span class="sig-name descname"><span class="pre">inception_v3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/inception.html#inception_v3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.inception.inception_v3" title="Permalink to this definition">#</a></dt>
+<dd><p>Inception v3 model architecture from
+<a class="reference external" href="http://arxiv.org/abs/1512.00567">&quot;Rethinking the Inception Architecture for Computer Vision&quot;</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Important</strong>: In contrast to the other models the inception_v3 expects tensors with a size of
+N x 3 x 299 x 299, so ensure your images are sized accordingly.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+<li><p><strong>aux_logits</strong> (<em>bool</em>) -- If True, add an auxiliary branch that can improve training.
+Default: <em>True</em></p></li>
+<li><p><strong>transform_input</strong> (<em>bool</em>) -- If True, preprocesses the input according to the method with which it
+was trained on ImageNet. Default: <em>False</em></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models.mobilenetv2">
+<span id="adversarialtensors-models-mobilenetv2-module"></span><h2>AdversarialTensors.models.mobilenetv2 module<a class="headerlink" href="#module-AdversarialTensors.models.mobilenetv2" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.mobilenetv2.MobileNetV2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.mobilenetv2.</span></span><span class="sig-name descname"><span class="pre">MobileNetV2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/mobilenetv2.html#MobileNetV2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.mobilenetv2.MobileNetV2.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/mobilenetv2.html#MobileNetV2.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.mobilenetv2.MobileNetV2.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.mobilenetv2.mobilenet_v2">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.mobilenetv2.</span></span><span class="sig-name descname"><span class="pre">mobilenet_v2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/mobilenetv2.html#mobilenet_v2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.mobilenetv2.mobilenet_v2" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructs a MobileNetV2 architecture from
+<a class="reference external" href="https://arxiv.org/abs/1801.04381">&quot;MobileNetV2: Inverted Residuals and Linear Bottlenecks&quot;</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models.resnet">
+<span id="adversarialtensors-models-resnet-module"></span><h2>AdversarialTensors.models.resnet module<a class="headerlink" href="#module-AdversarialTensors.models.resnet" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet.ResNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet.</span></span><span class="sig-name descname"><span class="pre">ResNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_init_residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width_per_group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_stride_with_dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet.html#ResNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet.ResNet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet.ResNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet.html#ResNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet.ResNet.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet.ResNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet.ResNet.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet.resnet18">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet.</span></span><span class="sig-name descname"><span class="pre">resnet18</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet.html#resnet18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet.resnet18" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructs a ResNet-18 model.
+:param pretrained: If True, returns a model pre-trained on ImageNet
+:type pretrained: bool
+:param progress: If True, displays a progress bar of the download to stderr
+:type progress: bool</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet.resnet34">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet.</span></span><span class="sig-name descname"><span class="pre">resnet34</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet.html#resnet34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet.resnet34" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructs a ResNet-34 model.
+:param pretrained: If True, returns a model pre-trained on ImageNet
+:type pretrained: bool
+:param progress: If True, displays a progress bar of the download to stderr
+:type progress: bool</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet.resnet50">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet.</span></span><span class="sig-name descname"><span class="pre">resnet50</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet.html#resnet50"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet.resnet50" title="Permalink to this definition">#</a></dt>
+<dd><p>Constructs a ResNet-50 model.
+:param pretrained: If True, returns a model pre-trained on ImageNet
+:type pretrained: bool
+:param progress: If True, displays a progress bar of the download to stderr
+:type progress: bool</p>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models.resnet_orig">
+<span id="adversarialtensors-models-resnet-orig-module"></span><h2>AdversarialTensors.models.resnet_orig module<a class="headerlink" href="#module-AdversarialTensors.models.resnet_orig" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BasicBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">BasicBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#BasicBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BasicBlock" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BasicBlock.expansion">
+<span class="sig-name descname"><span class="pre">expansion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BasicBlock.expansion" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BasicBlock.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#BasicBlock.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BasicBlock.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BasicBlock.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BasicBlock.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.Bottleneck">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">Bottleneck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#Bottleneck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.Bottleneck" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.Bottleneck.expansion">
+<span class="sig-name descname"><span class="pre">expansion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.Bottleneck.expansion" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.Bottleneck.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#Bottleneck.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.Bottleneck.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.Bottleneck.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.Bottleneck.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">BottleneckChen2020AdversarialNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#BottleneckChen2020AdversarialNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.expansion">
+<span class="sig-name descname"><span class="pre">expansion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.expansion" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#BottleneckChen2020AdversarialNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.OrigPreActResNet18">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">OrigPreActResNet18</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#OrigPreActResNet18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.OrigPreActResNet18" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.OrigResNet101">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">OrigResNet101</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#OrigResNet101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.OrigResNet101" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.OrigResNet152">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">OrigResNet152</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#OrigResNet152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.OrigResNet152" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.OrigResNet18">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">OrigResNet18</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#OrigResNet18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.OrigResNet18" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.OrigResNet34">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">OrigResNet34</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#OrigResNet34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.OrigResNet34" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.OrigResNet50">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">OrigResNet50</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#OrigResNet50"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.OrigResNet50" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">PreActBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_shortcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlock" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Pre-activation version of the BasicBlock.</p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlock.expansion">
+<span class="sig-name descname"><span class="pre">expansion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlock.expansion" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlock.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActBlock.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlock.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlock.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlock.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlockV2">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">PreActBlockV2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_shortcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActBlockV2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Pre-activation version of the BasicBlock (slightly different forward pass)</p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlockV2.expansion">
+<span class="sig-name descname"><span class="pre">expansion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.expansion" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlockV2.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActBlockV2.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBlockV2.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBottleneck">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">PreActBottleneck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActBottleneck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Pre-activation version of the original Bottleneck module.</p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBottleneck.expansion">
+<span class="sig-name descname"><span class="pre">expansion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.expansion" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBottleneck.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActBottleneck.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActBottleneck.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActResNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">PreActResNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_before_fc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_shortcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActResNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActResNet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActResNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#PreActResNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActResNet.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.PreActResNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.PreActResNet.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.ResNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.resnet_orig.</span></span><span class="sig-name descname"><span class="pre">ResNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#ResNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.ResNet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.ResNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/resnet_orig.html#ResNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.ResNet.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.resnet_orig.ResNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.resnet_orig.ResNet.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models.vgg">
+<span id="adversarialtensors-models-vgg-module"></span><h2>AdversarialTensors.models.vgg module<a class="headerlink" href="#module-AdversarialTensors.models.vgg" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.vgg.VGG">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.vgg.</span></span><span class="sig-name descname"><span class="pre">VGG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/vgg.html#VGG"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.vgg.VGG" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.vgg.VGG.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/vgg.html#VGG.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.vgg.VGG.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.vgg.VGG.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.vgg.VGG.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.vgg.vgg11_bn">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg11_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/vgg.html#vgg11_bn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.vgg.vgg11_bn" title="Permalink to this definition">#</a></dt>
+<dd><p>VGG 11-layer model (configuration &quot;A&quot;) with batch normalization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.vgg.vgg13_bn">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg13_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/vgg.html#vgg13_bn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.vgg.vgg13_bn" title="Permalink to this definition">#</a></dt>
+<dd><p>VGG 13-layer model (configuration &quot;B&quot;) with batch normalization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.vgg.vgg16_bn">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg16_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/vgg.html#vgg16_bn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.vgg.vgg16_bn" title="Permalink to this definition">#</a></dt>
+<dd><p>VGG 16-layer model (configuration &quot;D&quot;) with batch normalization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.models.vgg.vgg19_bn">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg19_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/vgg.html#vgg19_bn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.vgg.vgg19_bn" title="Permalink to this definition">#</a></dt>
+<dd><p>VGG 19-layer model (configuration 'E') with batch normalization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pretrained</strong> (<em>bool</em>) -- If True, returns a model pre-trained on ImageNet</p></li>
+<li><p><strong>progress</strong> (<em>bool</em>) -- If True, displays a progress bar of the download to stderr</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models.wide_resnet">
+<span id="adversarialtensors-models-wide-resnet-module"></span><h2>AdversarialTensors.models.wide_resnet module<a class="headerlink" href="#module-AdversarialTensors.models.wide_resnet" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.BasicBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.wide_resnet.</span></span><span class="sig-name descname"><span class="pre">BasicBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropRate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/wide_resnet.html#BasicBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.BasicBlock" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.BasicBlock.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/wide_resnet.html#BasicBlock.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.BasicBlock.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.BasicBlock.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.BasicBlock.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.NetworkBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.wide_resnet.</span></span><span class="sig-name descname"><span class="pre">NetworkBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nb_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_planes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropRate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/wide_resnet.html#NetworkBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.NetworkBlock" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.NetworkBlock.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/wide_resnet.html#NetworkBlock.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.NetworkBlock.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.NetworkBlock.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.NetworkBlock.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.WideResNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AdversarialTensors.models.wide_resnet.</span></span><span class="sig-name descname"><span class="pre">WideResNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">28</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widen_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_block1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropRate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/wide_resnet.html#WideResNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.WideResNet" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<p>Based on code from <a class="github reference external" href="https://github.com/yaodongyu/TRADES">yaodongyu/TRADES</a></p>
+<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.WideResNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/models/wide_resnet.html#WideResNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.WideResNet.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="AdversarialTensors.models.wide_resnet.WideResNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#AdversarialTensors.models.wide_resnet.WideResNet.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AdversarialTensors.models" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.densenet">AdversarialTensors.models.densenet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.DenseNet"><code class="docutils literal notranslate"><span class="pre">DenseNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.DenseNet.forward"><code class="docutils literal notranslate"><span class="pre">DenseNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.DenseNet.training"><code class="docutils literal notranslate"><span class="pre">DenseNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.densenet121"><code class="docutils literal notranslate"><span class="pre">densenet121()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.densenet161"><code class="docutils literal notranslate"><span class="pre">densenet161()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.densenet.densenet169"><code class="docutils literal notranslate"><span class="pre">densenet169()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.googlenet">AdversarialTensors.models.googlenet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.GoogLeNet"><code class="docutils literal notranslate"><span class="pre">GoogLeNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.GoogLeNet.forward"><code class="docutils literal notranslate"><span class="pre">GoogLeNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.GoogLeNet.training"><code class="docutils literal notranslate"><span class="pre">GoogLeNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.googlenet.googlenet"><code class="docutils literal notranslate"><span class="pre">googlenet()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.inception">AdversarialTensors.models.inception module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.Inception3"><code class="docutils literal notranslate"><span class="pre">Inception3</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.Inception3.forward"><code class="docutils literal notranslate"><span class="pre">Inception3.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.Inception3.training"><code class="docutils literal notranslate"><span class="pre">Inception3.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.inception.inception_v3"><code class="docutils literal notranslate"><span class="pre">inception_v3()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.mobilenetv2">AdversarialTensors.models.mobilenetv2 module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2"><code class="docutils literal notranslate"><span class="pre">MobileNetV2</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2.forward"><code class="docutils literal notranslate"><span class="pre">MobileNetV2.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.MobileNetV2.training"><code class="docutils literal notranslate"><span class="pre">MobileNetV2.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.mobilenetv2.mobilenet_v2"><code class="docutils literal notranslate"><span class="pre">mobilenet_v2()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.resnet">AdversarialTensors.models.resnet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.ResNet"><code class="docutils literal notranslate"><span class="pre">ResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.ResNet.forward"><code class="docutils literal notranslate"><span class="pre">ResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.ResNet.training"><code class="docutils literal notranslate"><span class="pre">ResNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.resnet18"><code class="docutils literal notranslate"><span class="pre">resnet18()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.resnet34"><code class="docutils literal notranslate"><span class="pre">resnet34()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet.resnet50"><code class="docutils literal notranslate"><span class="pre">resnet50()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.resnet_orig">AdversarialTensors.models.resnet_orig module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock"><code class="docutils literal notranslate"><span class="pre">BasicBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock.expansion"><code class="docutils literal notranslate"><span class="pre">BasicBlock.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock.forward"><code class="docutils literal notranslate"><span class="pre">BasicBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BasicBlock.training"><code class="docutils literal notranslate"><span class="pre">BasicBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck"><code class="docutils literal notranslate"><span class="pre">Bottleneck</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck.expansion"><code class="docutils literal notranslate"><span class="pre">Bottleneck.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck.forward"><code class="docutils literal notranslate"><span class="pre">Bottleneck.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.Bottleneck.training"><code class="docutils literal notranslate"><span class="pre">Bottleneck.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.expansion"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.forward"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.training"><code class="docutils literal notranslate"><span class="pre">BottleneckChen2020AdversarialNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigPreActResNet18"><code class="docutils literal notranslate"><span class="pre">OrigPreActResNet18()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet101"><code class="docutils literal notranslate"><span class="pre">OrigResNet101()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet152"><code class="docutils literal notranslate"><span class="pre">OrigResNet152()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet18"><code class="docutils literal notranslate"><span class="pre">OrigResNet18()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet34"><code class="docutils literal notranslate"><span class="pre">OrigResNet34()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.OrigResNet50"><code class="docutils literal notranslate"><span class="pre">OrigResNet50()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock"><code class="docutils literal notranslate"><span class="pre">PreActBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock.expansion"><code class="docutils literal notranslate"><span class="pre">PreActBlock.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock.forward"><code class="docutils literal notranslate"><span class="pre">PreActBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlock.training"><code class="docutils literal notranslate"><span class="pre">PreActBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.expansion"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.forward"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBlockV2.training"><code class="docutils literal notranslate"><span class="pre">PreActBlockV2.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.expansion"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck.expansion</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.forward"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActBottleneck.training"><code class="docutils literal notranslate"><span class="pre">PreActBottleneck.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActResNet"><code class="docutils literal notranslate"><span class="pre">PreActResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActResNet.forward"><code class="docutils literal notranslate"><span class="pre">PreActResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.PreActResNet.training"><code class="docutils literal notranslate"><span class="pre">PreActResNet.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.ResNet"><code class="docutils literal notranslate"><span class="pre">ResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.ResNet.forward"><code class="docutils literal notranslate"><span class="pre">ResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.resnet_orig.ResNet.training"><code class="docutils literal notranslate"><span class="pre">ResNet.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.vgg">AdversarialTensors.models.vgg module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.VGG"><code class="docutils literal notranslate"><span class="pre">VGG</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.VGG.forward"><code class="docutils literal notranslate"><span class="pre">VGG.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.VGG.training"><code class="docutils literal notranslate"><span class="pre">VGG.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg11_bn"><code class="docutils literal notranslate"><span class="pre">vgg11_bn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg13_bn"><code class="docutils literal notranslate"><span class="pre">vgg13_bn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg16_bn"><code class="docutils literal notranslate"><span class="pre">vgg16_bn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.vgg.vgg19_bn"><code class="docutils literal notranslate"><span class="pre">vgg19_bn()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models.wide_resnet">AdversarialTensors.models.wide_resnet module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.BasicBlock"><code class="docutils literal notranslate"><span class="pre">BasicBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.BasicBlock.forward"><code class="docutils literal notranslate"><span class="pre">BasicBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.BasicBlock.training"><code class="docutils literal notranslate"><span class="pre">BasicBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.NetworkBlock"><code class="docutils literal notranslate"><span class="pre">NetworkBlock</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.NetworkBlock.forward"><code class="docutils literal notranslate"><span class="pre">NetworkBlock.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.NetworkBlock.training"><code class="docutils literal notranslate"><span class="pre">NetworkBlock.training</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.WideResNet"><code class="docutils literal notranslate"><span class="pre">WideResNet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.WideResNet.forward"><code class="docutils literal notranslate"><span class="pre">WideResNet.forward()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.models.wide_resnet.WideResNet.training"><code class="docutils literal notranslate"><span class="pre">WideResNet.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.models">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manish Bhattarai, Mehmet Kaymak, Ben Nebgen, Kim Rasmussen, Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright Los Alamos National Laboratory.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1148 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="Python" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; AdversarialTensors 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdversarialTensors 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.adv_settings">adv_settings (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+      <li>
+    AdversarialTensors
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.adv_attacks
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.adv_attacks">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.attacks
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.attacks">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.btensor
+
+      <ul>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.btensor.svd
+
+      <ul>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.svd">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.btensor.tenalg
+
+      <ul>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.tenalg">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.btensor.tucker
+
+      <ul>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.tucker">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.datasets
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.datasets">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.denoiser
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.denoiser">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.LightningModel
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.LightningModel">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.model
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.model">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models.densenet
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.densenet">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models.googlenet
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.googlenet">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models.inception
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.inception">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models.mobilenetv2
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.mobilenetv2">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    AdversarialTensors.models.resnet
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.resnet">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models.resnet_orig
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.resnet_orig">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models.vgg
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.vgg">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.models.wide_resnet
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.wide_resnet">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.my_progress_bar
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.my_progress_bar">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.normalize
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.normalize">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.patcher
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.patcher">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.scheduler
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.scheduler">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.simple_attack
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.simple_attack">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.subset
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.subset">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.TensorDecomposition
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.TensorDecomposition">module</a>
+</li>
+      </ul></li>
+      <li>
+    AdversarialTensors.utils
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.utils">module</a>
+</li>
+      </ul></li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.adversary_model">adversary_model (AdversarialTensors.simple_attack.Attacks attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.attack_eval_all">attack_eval_all() (AdversarialTensors.attacks.Attacks method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.attack_eval_dataloader">attack_eval_dataloader() (AdversarialTensors.attacks.Attacks method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.attack_list">attack_list (AdversarialTensors.simple_attack.Attacks attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.adv_attacks.Attacks">Attacks (class in AdversarialTensors.adv_attacks)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks">(class in AdversarialTensors.attacks)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks">(class in AdversarialTensors.simple_attack)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BasicBlock">BasicBlock (class in AdversarialTensors.models.resnet_orig)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.BasicBlock">(class in AdversarialTensors.models.wide_resnet)</a>
+</li>
+      </ul></li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tenalg.batch_mode_dot">batch_mode_dot() (in module AdversarialTensors.btensor.tenalg)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tenalg.batch_multi_mode_dot">batch_multi_mode_dot() (in module AdversarialTensors.btensor.tenalg)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.batch_size">batch_size (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tenalg.batch_ttm">batch_ttm() (in module AdversarialTensors.btensor.tenalg)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tenalg.batched_naive_rank_estimator">batched_naive_rank_estimator() (in module AdversarialTensors.btensor.tenalg)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tenalg.batched_reconstruct">batched_reconstruct() (in module AdversarialTensors.btensor.tenalg)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tenalg.batched_regress_core">batched_regress_core() (in module AdversarialTensors.btensor.tenalg)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.Bottleneck">Bottleneck (class in AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet">BottleneckChen2020AdversarialNet (class in AdversarialTensors.models.resnet_orig)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.cifar100_dataload">cifar100_dataload() (AdversarialTensors.datasets.DatasetLoader method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.cifar10_dataload">cifar10_dataload() (AdversarialTensors.datasets.DatasetLoader method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.configure_optimizers">configure_optimizers() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.cpd">cpd() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.data_mode">data_mode (AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader">DatasetLoader (class in AdversarialTensors.datasets)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.denoiser.Denoiser">Denoiser (class in AdversarialTensors.denoiser)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.denoiser_settings">denoiser_settings (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.densenet.DenseNet">DenseNet (class in AdversarialTensors.models.densenet)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.densenet.densenet121">densenet121() (in module AdversarialTensors.models.densenet)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.densenet.densenet161">densenet161() (in module AdversarialTensors.models.densenet)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.densenet.densenet169">densenet169() (in module AdversarialTensors.models.densenet)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.eta_min">eta_min (AdversarialTensors.scheduler.WarmupCosineLR attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy">eval_accuracy() (in module AdversarialTensors.utils)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy_dataloader">eval_accuracy_dataloader() (in module AdversarialTensors.utils)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy_dataloader_with_attack">eval_accuracy_dataloader_with_attack() (in module AdversarialTensors.utils)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy_w_reconst_dataloader">eval_accuracy_w_reconst_dataloader() (in module AdversarialTensors.utils)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BasicBlock.expansion">expansion (AdversarialTensors.models.resnet_orig.BasicBlock attribute)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.Bottleneck.expansion">(AdversarialTensors.models.resnet_orig.Bottleneck attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.expansion">(AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlock.expansion">(AdversarialTensors.models.resnet_orig.PreActBlock attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlockV2.expansion">(AdversarialTensors.models.resnet_orig.PreActBlockV2 attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBottleneck.expansion">(AdversarialTensors.models.resnet_orig.PreActBottleneck attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.extract_patches">extract_patches() (AdversarialTensors.patcher.Patcher method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.FashionMNIST_dataload">FashionMNIST_dataload() (AdversarialTensors.datasets.DatasetLoader method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.model.FinalModel">FinalModel (class in AdversarialTensors.model)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.fit">fit() (AdversarialTensors.datasets.DatasetLoader method)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.patch_transform.fit">(AdversarialTensors.patcher.patch_transform method)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.fit">(AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      </ul></li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.forward">forward() (AdversarialTensors.attacks.Attacks method)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.denoiser.Denoiser.forward">(AdversarialTensors.denoiser.Denoiser method)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.forward">(AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.model.FinalModel.forward">(AdversarialTensors.model.FinalModel method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.densenet.DenseNet.forward">(AdversarialTensors.models.densenet.DenseNet method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.googlenet.GoogLeNet.forward">(AdversarialTensors.models.googlenet.GoogLeNet method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.inception.Inception3.forward">(AdversarialTensors.models.inception.Inception3 method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.mobilenetv2.MobileNetV2.forward">(AdversarialTensors.models.mobilenetv2.MobileNetV2 method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet.ResNet.forward">(AdversarialTensors.models.resnet.ResNet method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BasicBlock.forward">(AdversarialTensors.models.resnet_orig.BasicBlock method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.Bottleneck.forward">(AdversarialTensors.models.resnet_orig.Bottleneck method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.forward">(AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlock.forward">(AdversarialTensors.models.resnet_orig.PreActBlock method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlockV2.forward">(AdversarialTensors.models.resnet_orig.PreActBlockV2 method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBottleneck.forward">(AdversarialTensors.models.resnet_orig.PreActBottleneck method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActResNet.forward">(AdversarialTensors.models.resnet_orig.PreActResNet method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.ResNet.forward">(AdversarialTensors.models.resnet_orig.ResNet method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.vgg.VGG.forward">(AdversarialTensors.models.vgg.VGG method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.BasicBlock.forward">(AdversarialTensors.models.wide_resnet.BasicBlock method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.NetworkBlock.forward">(AdversarialTensors.models.wide_resnet.NetworkBlock method)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.WideResNet.forward">(AdversarialTensors.models.wide_resnet.WideResNet method)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.forward">(AdversarialTensors.normalize.Normalize method)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.forward">(AdversarialTensors.simple_attack.Attacks method)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.forward">(AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.adv_attacks.Attacks.generate">generate() (AdversarialTensors.adv_attacks.Attacks method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.generate_attack">generate_attack() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.get_lr">get_lr() (AdversarialTensors.scheduler.WarmupCosineLR method)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.googlenet.GoogLeNet">GoogLeNet (class in AdversarialTensors.models.googlenet)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.googlenet.googlenet">googlenet() (in module AdversarialTensors.models.googlenet)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.h">h (AdversarialTensors.patcher.Patcher attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.Imagenet_dataload">Imagenet_dataload() (AdversarialTensors.datasets.DatasetLoader method)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.inception.Inception3">Inception3 (class in AdversarialTensors.models.inception)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.inception.inception_v3">inception_v3() (in module AdversarialTensors.models.inception)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.adv_attacks.Attacks.init_attack">init_attack() (AdversarialTensors.adv_attacks.Attacks method)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.init_attack">(AdversarialTensors.attacks.Attacks method)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.init_attack">(AdversarialTensors.simple_attack.Attacks method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.my_progress_bar.MyProgressBar.init_validation_tqdm">init_validation_tqdm() (AdversarialTensors.my_progress_bar.MyProgressBar method)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tucker.initialize_tucker">initialize_tucker() (in module AdversarialTensors.btensor.tucker)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.kfold_split">kfold_split() (AdversarialTensors.datasets.DatasetLoader method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.learning_rate_cifar10">learning_rate_cifar10() (in module AdversarialTensors.LightningModel)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel">LightningModel (class in AdversarialTensors.LightningModel)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.lr">lr (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.max_epochs">max_epochs (AdversarialTensors.scheduler.WarmupCosineLR attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.mean">mean (AdversarialTensors.normalize.Normalize attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.means">means (AdversarialTensors.patcher.Patcher attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.merge_patches">merge_patches() (AdversarialTensors.patcher.Patcher method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.method">method (AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.MNIST_dataload">MNIST_dataload() (AdversarialTensors.datasets.DatasetLoader method)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.mobilenetv2.mobilenet_v2">mobilenet_v2() (in module AdversarialTensors.models.mobilenetv2)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.mobilenetv2.MobileNetV2">MobileNetV2 (class in AdversarialTensors.models.mobilenetv2)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.model_name">model_name (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.model_step">model_step() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.model_wrapper">model_wrapper (AdversarialTensors.simple_attack.Attacks attribute)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors">AdversarialTensors</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.adv_attacks">AdversarialTensors.adv_attacks</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.attacks">AdversarialTensors.attacks</a>
+</li>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor">AdversarialTensors.btensor</a>
+</li>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.svd">AdversarialTensors.btensor.svd</a>
+</li>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.tenalg">AdversarialTensors.btensor.tenalg</a>
+</li>
+        <li><a href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.tucker">AdversarialTensors.btensor.tucker</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.datasets">AdversarialTensors.datasets</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.denoiser">AdversarialTensors.denoiser</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.LightningModel">AdversarialTensors.LightningModel</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.model">AdversarialTensors.model</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models">AdversarialTensors.models</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.densenet">AdversarialTensors.models.densenet</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.googlenet">AdversarialTensors.models.googlenet</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.inception">AdversarialTensors.models.inception</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.mobilenetv2">AdversarialTensors.models.mobilenetv2</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.resnet">AdversarialTensors.models.resnet</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.resnet_orig">AdversarialTensors.models.resnet_orig</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.vgg">AdversarialTensors.models.vgg</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#module-AdversarialTensors.models.wide_resnet">AdversarialTensors.models.wide_resnet</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.my_progress_bar">AdversarialTensors.my_progress_bar</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.normalize">AdversarialTensors.normalize</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.patcher">AdversarialTensors.patcher</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.scheduler">AdversarialTensors.scheduler</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.simple_attack">AdversarialTensors.simple_attack</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.subset">AdversarialTensors.subset</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.TensorDecomposition">AdversarialTensors.TensorDecomposition</a>
+</li>
+        <li><a href="AdversarialTensors.html#module-AdversarialTensors.utils">AdversarialTensors.utils</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.my_progress_bar.MyProgressBar">MyProgressBar (class in AdversarialTensors.my_progress_bar)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.name">name (AdversarialTensors.datasets.DatasetLoader attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ncpd">ncpd() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.NetworkBlock">NetworkBlock (class in AdversarialTensors.models.wide_resnet)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.NMF">NMF() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.NNSVD">NNSVD() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize">Normalize (class in AdversarialTensors.normalize)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.normalize_settings">normalize_settings (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ntucker">ntucker() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.num_batches">num_batches (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.num_classes">num_classes (AdversarialTensors.LightningModel.LightningModel attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_test_epoch_end">on_test_epoch_end() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_train_epoch_end">on_train_epoch_end() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_train_start">on_train_start() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_validation_epoch_end">on_validation_epoch_end() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.OrigPreActResNet18">OrigPreActResNet18() (in module AdversarialTensors.models.resnet_orig)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.OrigResNet101">OrigResNet101() (in module AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.OrigResNet152">OrigResNet152() (in module AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.OrigResNet18">OrigResNet18() (in module AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.OrigResNet34">OrigResNet34() (in module AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.OrigResNet50">OrigResNet50() (in module AdversarialTensors.models.resnet_orig)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.params">params (AdversarialTensors.datasets.DatasetLoader attribute)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.params">(AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tucker.partial_tucker">partial_tucker() (in module AdversarialTensors.btensor.tucker)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.patch_transform">patch_transform (class in AdversarialTensors.patcher)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.patch_transform.patcher">patcher (AdversarialTensors.patcher.patch_transform attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher">Patcher (class in AdversarialTensors.patcher)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlock">PreActBlock (class in AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlockV2">PreActBlockV2 (class in AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBottleneck">PreActBottleneck (class in AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActResNet">PreActResNet (class in AdversarialTensors.models.resnet_orig)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.preprocess_data">preprocess_data() (AdversarialTensors.datasets.DatasetLoader method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.randomized_range_finder">randomized_range_finder() (in module AdversarialTensors.btensor.svd)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.randomized_svd">randomized_svd() (in module AdversarialTensors.btensor.svd)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ranks">ranks (AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.reconstruct">reconstruct (AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.relative_error">relative_error() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet.ResNet">ResNet (class in AdversarialTensors.models.resnet)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.ResNet">(class in AdversarialTensors.models.resnet_orig)</a>
+</li>
+      </ul></li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet.resnet18">resnet18() (in module AdversarialTensors.models.resnet)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet.resnet34">resnet34() (in module AdversarialTensors.models.resnet)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet.resnet50">resnet50() (in module AdversarialTensors.models.resnet)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.resnet_configure_optimizers">resnet_configure_optimizers() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.std">std (AdversarialTensors.normalize.Normalize attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.stds">stds (AdversarialTensors.patcher.Patcher attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.subset.Subset">Subset (class in AdversarialTensors.subset)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.SVD">SVD() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.svd_checks">svd_checks() (in module AdversarialTensors.btensor.svd)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.svd_flip">svd_flip() (in module AdversarialTensors.btensor.svd)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.svd_interface">svd_interface() (in module AdversarialTensors.btensor.svd)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition">TensorDecomposition (class in AdversarialTensors.TensorDecomposition)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.test_step">test_step() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.training">training (AdversarialTensors.attacks.Attacks attribute)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.denoiser.Denoiser.training">(AdversarialTensors.denoiser.Denoiser attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.model.FinalModel.training">(AdversarialTensors.model.FinalModel attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.densenet.DenseNet.training">(AdversarialTensors.models.densenet.DenseNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.googlenet.GoogLeNet.training">(AdversarialTensors.models.googlenet.GoogLeNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.inception.Inception3.training">(AdversarialTensors.models.inception.Inception3 attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.mobilenetv2.MobileNetV2.training">(AdversarialTensors.models.mobilenetv2.MobileNetV2 attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet.ResNet.training">(AdversarialTensors.models.resnet.ResNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BasicBlock.training">(AdversarialTensors.models.resnet_orig.BasicBlock attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.Bottleneck.training">(AdversarialTensors.models.resnet_orig.Bottleneck attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet.training">(AdversarialTensors.models.resnet_orig.BottleneckChen2020AdversarialNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlock.training">(AdversarialTensors.models.resnet_orig.PreActBlock attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBlockV2.training">(AdversarialTensors.models.resnet_orig.PreActBlockV2 attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActBottleneck.training">(AdversarialTensors.models.resnet_orig.PreActBottleneck attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.PreActResNet.training">(AdversarialTensors.models.resnet_orig.PreActResNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.resnet_orig.ResNet.training">(AdversarialTensors.models.resnet_orig.ResNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.vgg.VGG.training">(AdversarialTensors.models.vgg.VGG attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.BasicBlock.training">(AdversarialTensors.models.wide_resnet.BasicBlock attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.NetworkBlock.training">(AdversarialTensors.models.wide_resnet.NetworkBlock attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.WideResNet.training">(AdversarialTensors.models.wide_resnet.WideResNet attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.training">(AdversarialTensors.normalize.Normalize attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.training">(AdversarialTensors.simple_attack.Attacks attribute)</a>
+</li>
+        <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.training">(AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.training_step">training_step() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.svd.truncated_svd">truncated_svd() (in module AdversarialTensors.btensor.svd)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.tt">tt() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ttm">ttm() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.tucker">tucker() (AdversarialTensors.TensorDecomposition.TensorDecomposition method)</a>
+
+      <ul>
+        <li><a href="AdversarialTensors.btensor.html#AdversarialTensors.btensor.tucker.tucker">(in module AdversarialTensors.btensor.tucker)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.validation_step">validation_step() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.verbose">verbose (AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.vgg.VGG">VGG (class in AdversarialTensors.models.vgg)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.vgg.vgg11_bn">vgg11_bn() (in module AdversarialTensors.models.vgg)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.vgg.vgg13_bn">vgg13_bn() (in module AdversarialTensors.models.vgg)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.vgg.vgg16_bn">vgg16_bn() (in module AdversarialTensors.models.vgg)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.vgg.vgg19_bn">vgg19_bn() (in module AdversarialTensors.models.vgg)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.w">w (AdversarialTensors.patcher.Patcher attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.warmup_epochs">warmup_epochs (AdversarialTensors.scheduler.WarmupCosineLR attribute)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.warmup_start_lr">warmup_start_lr (AdversarialTensors.scheduler.WarmupCosineLR attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR">WarmupCosineLR (class in AdversarialTensors.scheduler)</a>
+</li>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.wide_resnet_configure_optimizers">wide_resnet_configure_optimizers() (AdversarialTensors.LightningModel.LightningModel method)</a>
+</li>
+      <li><a href="AdversarialTensors.models.html#AdversarialTensors.models.wide_resnet.WideResNet">WideResNet (class in AdversarialTensors.models.wide_resnet)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.X">X (AdversarialTensors.TensorDecomposition.TensorDecomposition attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manish Bhattarai, Mehmet Kaymak, Ben Nebgen, Kim Rasmussen, Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright Los Alamos National Laboratory.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

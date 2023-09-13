@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="Python" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>AdversarialTensors &#8212; AdversarialTensors 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdversarialTensors 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/modules.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AdversarialTensors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="adversarialtensors">
+<h1>AdversarialTensors<a class="headerlink" href="#adversarialtensors" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AdversarialTensors.html">AdversarialTensors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.btensor.html">AdversarialTensors.btensor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.btensor.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.svd">AdversarialTensors.btensor.svd module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.tenalg">AdversarialTensors.btensor.tenalg module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor.tucker">AdversarialTensors.btensor.tucker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.btensor.html#module-AdversarialTensors.btensor">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.models.html">AdversarialTensors.models package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.densenet">AdversarialTensors.models.densenet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.googlenet">AdversarialTensors.models.googlenet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.inception">AdversarialTensors.models.inception module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.mobilenetv2">AdversarialTensors.models.mobilenetv2 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.resnet">AdversarialTensors.models.resnet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.resnet_orig">AdversarialTensors.models.resnet_orig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.vgg">AdversarialTensors.models.vgg module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models.wide_resnet">AdversarialTensors.models.wide_resnet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.models.html#module-AdversarialTensors.models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.LightningModel">AdversarialTensors.LightningModel module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel"><code class="docutils literal notranslate"><span class="pre">LightningModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.model_name"><code class="docutils literal notranslate"><span class="pre">LightningModel.model_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.lr"><code class="docutils literal notranslate"><span class="pre">LightningModel.lr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.batch_size"><code class="docutils literal notranslate"><span class="pre">LightningModel.batch_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.num_batches"><code class="docutils literal notranslate"><span class="pre">LightningModel.num_batches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.num_classes"><code class="docutils literal notranslate"><span class="pre">LightningModel.num_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.adv_settings"><code class="docutils literal notranslate"><span class="pre">LightningModel.adv_settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.normalize_settings"><code class="docutils literal notranslate"><span class="pre">LightningModel.normalize_settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.denoiser_settings"><code class="docutils literal notranslate"><span class="pre">LightningModel.denoiser_settings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">LightningModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.forward"><code class="docutils literal notranslate"><span class="pre">LightningModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.generate_attack"><code class="docutils literal notranslate"><span class="pre">LightningModel.generate_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.model_step"><code class="docutils literal notranslate"><span class="pre">LightningModel.model_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_test_epoch_end"><code class="docutils literal notranslate"><span class="pre">LightningModel.on_test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_train_epoch_end"><code class="docutils literal notranslate"><span class="pre">LightningModel.on_train_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_train_start"><code class="docutils literal notranslate"><span class="pre">LightningModel.on_train_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.on_validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">LightningModel.on_validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.resnet_configure_optimizers"><code class="docutils literal notranslate"><span class="pre">LightningModel.resnet_configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.test_step"><code class="docutils literal notranslate"><span class="pre">LightningModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.training_step"><code class="docutils literal notranslate"><span class="pre">LightningModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.validation_step"><code class="docutils literal notranslate"><span class="pre">LightningModel.validation_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.LightningModel.wide_resnet_configure_optimizers"><code class="docutils literal notranslate"><span class="pre">LightningModel.wide_resnet_configure_optimizers()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.LightningModel.learning_rate_cifar10"><code class="docutils literal notranslate"><span class="pre">learning_rate_cifar10()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.TensorDecomposition">AdversarialTensors.TensorDecomposition module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.method"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.method</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.params"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.X"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.X</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ranks"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.ranks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.reconstruct"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.reconstruct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.verbose"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.verbose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.data_mode"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.data_mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.NMF"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.NMF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.NNSVD"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.NNSVD()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.SVD"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.SVD()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.cpd"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.cpd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.fit"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.forward"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ncpd"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.ncpd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ntucker"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.ntucker()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.relative_error"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.relative_error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.training"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.tt"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.tt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.ttm"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.ttm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.TensorDecomposition.TensorDecomposition.tucker"><code class="docutils literal notranslate"><span class="pre">TensorDecomposition.tucker()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.adv_attacks">AdversarialTensors.adv_attacks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.adv_attacks.Attacks"><code class="docutils literal notranslate"><span class="pre">Attacks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.adv_attacks.Attacks.generate"><code class="docutils literal notranslate"><span class="pre">Attacks.generate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.adv_attacks.Attacks.init_attack"><code class="docutils literal notranslate"><span class="pre">Attacks.init_attack()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.attacks">AdversarialTensors.attacks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks"><code class="docutils literal notranslate"><span class="pre">Attacks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.attack_eval_all"><code class="docutils literal notranslate"><span class="pre">Attacks.attack_eval_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.attack_eval_dataloader"><code class="docutils literal notranslate"><span class="pre">Attacks.attack_eval_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.forward"><code class="docutils literal notranslate"><span class="pre">Attacks.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.init_attack"><code class="docutils literal notranslate"><span class="pre">Attacks.init_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.attacks.Attacks.training"><code class="docutils literal notranslate"><span class="pre">Attacks.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.datasets">AdversarialTensors.datasets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader"><code class="docutils literal notranslate"><span class="pre">DatasetLoader</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.name"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.params"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.FashionMNIST_dataload"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.FashionMNIST_dataload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.Imagenet_dataload"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.Imagenet_dataload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.MNIST_dataload"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.MNIST_dataload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.cifar100_dataload"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.cifar100_dataload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.cifar10_dataload"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.cifar10_dataload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.fit"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.kfold_split"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.kfold_split()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.preprocess_data"><code class="docutils literal notranslate"><span class="pre">DatasetLoader.preprocess_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.denoiser">AdversarialTensors.denoiser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.denoiser.Denoiser"><code class="docutils literal notranslate"><span class="pre">Denoiser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.denoiser.Denoiser.forward"><code class="docutils literal notranslate"><span class="pre">Denoiser.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.denoiser.Denoiser.training"><code class="docutils literal notranslate"><span class="pre">Denoiser.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.model">AdversarialTensors.model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.model.FinalModel"><code class="docutils literal notranslate"><span class="pre">FinalModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.model.FinalModel.forward"><code class="docutils literal notranslate"><span class="pre">FinalModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.model.FinalModel.training"><code class="docutils literal notranslate"><span class="pre">FinalModel.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.my_progress_bar">AdversarialTensors.my_progress_bar module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.my_progress_bar.MyProgressBar"><code class="docutils literal notranslate"><span class="pre">MyProgressBar</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.my_progress_bar.MyProgressBar.init_validation_tqdm"><code class="docutils literal notranslate"><span class="pre">MyProgressBar.init_validation_tqdm()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.normalize">AdversarialTensors.normalize module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize"><code class="docutils literal notranslate"><span class="pre">Normalize</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.mean"><code class="docutils literal notranslate"><span class="pre">Normalize.mean</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.std"><code class="docutils literal notranslate"><span class="pre">Normalize.std</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.forward"><code class="docutils literal notranslate"><span class="pre">Normalize.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.normalize.Normalize.training"><code class="docutils literal notranslate"><span class="pre">Normalize.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.patcher">AdversarialTensors.patcher module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher"><code class="docutils literal notranslate"><span class="pre">Patcher</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.w"><code class="docutils literal notranslate"><span class="pre">Patcher.w</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.h"><code class="docutils literal notranslate"><span class="pre">Patcher.h</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.stds"><code class="docutils literal notranslate"><span class="pre">Patcher.stds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.means"><code class="docutils literal notranslate"><span class="pre">Patcher.means</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.extract_patches"><code class="docutils literal notranslate"><span class="pre">Patcher.extract_patches()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.Patcher.merge_patches"><code class="docutils literal notranslate"><span class="pre">Patcher.merge_patches()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.patch_transform"><code class="docutils literal notranslate"><span class="pre">patch_transform</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.patch_transform.patcher"><code class="docutils literal notranslate"><span class="pre">patch_transform.patcher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.patcher.patch_transform.fit"><code class="docutils literal notranslate"><span class="pre">patch_transform.fit()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.scheduler">AdversarialTensors.scheduler module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR"><code class="docutils literal notranslate"><span class="pre">WarmupCosineLR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.warmup_epochs"><code class="docutils literal notranslate"><span class="pre">WarmupCosineLR.warmup_epochs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.max_epochs"><code class="docutils literal notranslate"><span class="pre">WarmupCosineLR.max_epochs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.warmup_start_lr"><code class="docutils literal notranslate"><span class="pre">WarmupCosineLR.warmup_start_lr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.eta_min"><code class="docutils literal notranslate"><span class="pre">WarmupCosineLR.eta_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.scheduler.WarmupCosineLR.get_lr"><code class="docutils literal notranslate"><span class="pre">WarmupCosineLR.get_lr()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.simple_attack">AdversarialTensors.simple_attack module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks"><code class="docutils literal notranslate"><span class="pre">Attacks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.model_wrapper"><code class="docutils literal notranslate"><span class="pre">Attacks.model_wrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.attack_list"><code class="docutils literal notranslate"><span class="pre">Attacks.attack_list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.adversary_model"><code class="docutils literal notranslate"><span class="pre">Attacks.adversary_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.forward"><code class="docutils literal notranslate"><span class="pre">Attacks.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.init_attack"><code class="docutils literal notranslate"><span class="pre">Attacks.init_attack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.simple_attack.Attacks.training"><code class="docutils literal notranslate"><span class="pre">Attacks.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.subset">AdversarialTensors.subset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.subset.Subset"><code class="docutils literal notranslate"><span class="pre">Subset</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors.utils">AdversarialTensors.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy"><code class="docutils literal notranslate"><span class="pre">eval_accuracy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy_dataloader"><code class="docutils literal notranslate"><span class="pre">eval_accuracy_dataloader()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy_dataloader_with_attack"><code class="docutils literal notranslate"><span class="pre">eval_accuracy_dataloader_with_attack()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="AdversarialTensors.html#AdversarialTensors.utils.eval_accuracy_w_reconst_dataloader"><code class="docutils literal notranslate"><span class="pre">eval_accuracy_w_reconst_dataloader()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AdversarialTensors.html#module-AdversarialTensors">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manish Bhattarai, Mehmet Kaymak, Ben Nebgen, Kim Rasmussen, Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright Los Alamos National Laboratory.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

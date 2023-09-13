@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="Python" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdversarialTensors.datasets &#8212; AdversarialTensors 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/AdversarialTensors/datasets';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdversarialTensors 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for AdversarialTensors.datasets</h1><div class="highlight"><pre>
+<span></span><span class="c1">#@author: Manish Bhattarai, Mehmet Cagri</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch.utils</span> <span class="kn">import</span> <span class="n">data</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+
+<div class="viewcode-block" id="DatasetLoader"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader">[docs]</a><span class="k">class</span> <span class="nc">DatasetLoader</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A utility class to load different types of datasets for machine learning experiments.</span>
+
+<span class="sd">    ...</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : str</span>
+<span class="sd">        The name of the dataset to be loaded</span>
+<span class="sd">    params : dict</span>
+<span class="sd">        A dictionary containing hyperparameters for the dataloader</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    -------</span>
+<span class="sd">    preprocess_data(mean, std):</span>
+<span class="sd">        Applies standard preprocessing transformations to the dataset.</span>
+<span class="sd">    cifar10_dataload():</span>
+<span class="sd">        Loads the CIFAR-10 dataset.</span>
+<span class="sd">    cifar100_dataload():</span>
+<span class="sd">        Loads the CIFAR-100 dataset.</span>
+<span class="sd">    MNIST_dataload():</span>
+<span class="sd">        Loads the MNIST dataset.</span>
+<span class="sd">    FashionMNIST_dataload():</span>
+<span class="sd">        Loads the FashionMNIST dataset.</span>
+<span class="sd">    Imagenet_dataload():</span>
+<span class="sd">        Loads the ImageNet dataset.</span>
+<span class="sd">    fit():</span>
+<span class="sd">        Calls the appropriate dataload method based on the dataset name.</span>
+<span class="sd">    kfold_split(dataset, transform_train=None, transform_valid=None):</span>
+<span class="sd">        Splits the dataset into training and validation sets for k-fold cross-validation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;cifar10&#39;</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;num_workers&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span><span class="s1">&#39;normalize&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;nfolds&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor to initialize the DatasetLoader.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name : str</span>
+<span class="sd">            The name of the dataset to be loaded.</span>
+<span class="sd">        params : dict</span>
+<span class="sd">            A dictionary of hyperparameters for dataset loading.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span><span class="n">params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<div class="viewcode-block" id="DatasetLoader.preprocess_data"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.preprocess_data">[docs]</a>    <span class="k">def</span> <span class="nf">preprocess_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">mean</span><span class="p">,</span><span class="n">std</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies standard preprocessing transformations to the dataset.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        mean : tuple or float</span>
+<span class="sd">            The mean for each channel for normalization.</span>
+<span class="sd">        std : tuple or float</span>
+<span class="sd">            The standard deviation for each channel for normalization.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        transform_train : torchvision.transforms.Compose</span>
+<span class="sd">            The transformations to apply to the training set.</span>
+<span class="sd">        transform_test : torchvision.transforms.Compose</span>
+<span class="sd">            The transformations to apply to the test set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Preparing data..&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;normalize&#39;</span><span class="p">]:</span>
+            <span class="n">transform_train</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">RandomHorizontalFlip</span><span class="p">(),</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span><span class="n">std</span> <span class="p">),</span>
+                <span class="p">])</span>
+            <span class="n">transform_test</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">),</span>
+                <span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">transform_train</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">RandomHorizontalFlip</span><span class="p">(),</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                <span class="c1">#transforms.Normalize(mean,std ),</span>
+                <span class="p">])</span>
+            <span class="n">transform_test</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+                <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                <span class="c1">#transforms.Normalize(mean, std),</span>
+                <span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">transform_train</span><span class="p">,</span><span class="n">transform_test</span></div>
+
+<div class="viewcode-block" id="DatasetLoader.cifar10_dataload"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.cifar10_dataload">[docs]</a>    <span class="k">def</span> <span class="nf">cifar10_dataload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the CIFAR-10 dataset using the torchvision library and applies preprocessing transformations.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        trainloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the training dataset.</span>
+<span class="sd">        testloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the test dataset.</span>
+<span class="sd">        classes : tuple</span>
+<span class="sd">            Tuple containing class names.</span>
+<span class="sd">        mean : tuple</span>
+<span class="sd">            Tuple containing channel-wise mean for normalization.</span>
+<span class="sd">        std : tuple</span>
+<span class="sd">            Tuple containing channel-wise standard deviation for normalization.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Data</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.4914</span><span class="p">,</span> <span class="mf">0.4822</span><span class="p">,</span> <span class="mf">0.4465</span><span class="p">)</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.2471</span><span class="p">,</span> <span class="mf">0.2435</span><span class="p">,</span> <span class="mf">0.2616</span><span class="p">)</span>
+
+        <span class="n">transform_train</span><span class="p">,</span> <span class="n">transform_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span><span class="n">std</span><span class="p">)</span>
+        <span class="n">transform_train_cur</span> <span class="o">=</span> <span class="n">transform_train</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">trainset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_train_cur</span><span class="p">)</span>
+
+        <span class="n">testset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+
+        <span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+        <span class="n">classes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;plane&#39;</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;deer&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;frog&#39;</span><span class="p">,</span> <span class="s1">&#39;horse&#39;</span><span class="p">,</span> <span class="s1">&#39;ship&#39;</span><span class="p">,</span> <span class="s1">&#39;truck&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+                <span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;shuffle&#39;</span><span class="p">],</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+            <span class="k">return</span> <span class="n">trainloader</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">splits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kfold_split</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">transform_train</span><span class="o">=</span><span class="n">transform_train</span><span class="p">,</span>
+                             <span class="n">transform_valid</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">splits</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> </div>
+
+<div class="viewcode-block" id="DatasetLoader.cifar100_dataload"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.cifar100_dataload">[docs]</a>    <span class="k">def</span> <span class="nf">cifar100_dataload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the CIFAR-100 dataset using the torchvision library and applies preprocessing transformations.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        trainloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the training dataset.</span>
+<span class="sd">        testloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the test dataset.</span>
+<span class="sd">        classes : tuple</span>
+<span class="sd">            Tuple containing class names.</span>
+<span class="sd">        mean : tuple</span>
+<span class="sd">            Tuple containing channel-wise mean for normalization.</span>
+<span class="sd">        std : tuple</span>
+<span class="sd">            Tuple containing channel-wise standard deviation for normalization.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Data</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5071</span><span class="p">,</span> <span class="mf">0.4867</span><span class="p">,</span> <span class="mf">0.4408</span><span class="p">)</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.2675</span><span class="p">,</span> <span class="mf">0.2565</span><span class="p">,</span> <span class="mf">0.2761</span><span class="p">)</span>
+
+        <span class="n">transform_train</span><span class="p">,</span> <span class="n">transform_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+        <span class="n">transform_train_cur</span> <span class="o">=</span> <span class="n">transform_train</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">trainset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR100</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_train_cur</span><span class="p">)</span>
+
+        <span class="n">testset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR100</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+        <span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+        <span class="c1"># TODO: find the actual class lables</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+                <span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;shuffle&#39;</span><span class="p">],</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+            <span class="k">return</span> <span class="n">trainloader</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">splits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kfold_split</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">transform_train</span><span class="o">=</span><span class="n">transform_train</span><span class="p">,</span>
+                             <span class="n">transform_valid</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">splits</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> </div>
+
+<div class="viewcode-block" id="DatasetLoader.MNIST_dataload"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.MNIST_dataload">[docs]</a>    <span class="k">def</span> <span class="nf">MNIST_dataload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the MNIST dataset using the torchvision library and applies preprocessing transformations.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        trainloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the training dataset.</span>
+<span class="sd">        testloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the test dataset.</span>
+<span class="sd">        classes : tuple</span>
+<span class="sd">            Tuple containing class names.</span>
+<span class="sd">        mean : float</span>
+<span class="sd">            Mean for grayscale normalization.</span>
+<span class="sd">        std : float</span>
+<span class="sd">            Standard deviation for grayscale normalization.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Data</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="mf">0.1307</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="mf">0.3081</span>
+
+        <span class="n">transform_train</span><span class="p">,</span> <span class="n">transform_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+        <span class="n">transform_train_cur</span> <span class="o">=</span> <span class="n">transform_train</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">trainset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_train_cur</span><span class="p">)</span>
+
+        <span class="n">testset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+        <span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+        <span class="n">classes</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+                <span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;shuffle&#39;</span><span class="p">],</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+            <span class="k">return</span> <span class="n">trainloader</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">splits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kfold_split</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">transform_train</span><span class="o">=</span><span class="n">transform_train</span><span class="p">,</span>
+                             <span class="n">transform_valid</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">splits</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> </div>
+
+<div class="viewcode-block" id="DatasetLoader.FashionMNIST_dataload"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.FashionMNIST_dataload">[docs]</a>    <span class="k">def</span> <span class="nf">FashionMNIST_dataload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the FashionMNIST dataset using the torchvision library and applies preprocessing transformations.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        trainloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the training dataset.</span>
+<span class="sd">        testloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the test dataset.</span>
+<span class="sd">        classes : tuple</span>
+<span class="sd">            Tuple containing class names.</span>
+<span class="sd">        mean : float</span>
+<span class="sd">            Mean for grayscale normalization.</span>
+<span class="sd">        std : float</span>
+<span class="sd">            Standard deviation for grayscale normalization.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Data</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="mf">0.2860</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="mf">0.3530</span>
+
+        <span class="n">transform_train</span><span class="p">,</span> <span class="n">transform_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+        <span class="n">transform_train_cur</span> <span class="o">=</span> <span class="n">transform_train</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">trainset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_train_cur</span><span class="p">)</span>
+
+        <span class="n">testset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+        <span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+        <span class="n">classes</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+                <span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;shuffle&#39;</span><span class="p">],</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+            <span class="k">return</span> <span class="n">trainloader</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">splits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kfold_split</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">transform_train</span><span class="o">=</span><span class="n">transform_train</span><span class="p">,</span>
+                             <span class="n">transform_valid</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">splits</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span> </div>
+
+<div class="viewcode-block" id="DatasetLoader.Imagenet_dataload"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.Imagenet_dataload">[docs]</a>    <span class="k">def</span> <span class="nf">Imagenet_dataload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads the ImageNet dataset using the torchvision library and applies preprocessing transformations.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        trainloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the training dataset.</span>
+<span class="sd">        testloader : torch.utils.data.DataLoader</span>
+<span class="sd">            Dataloader for the test dataset.</span>
+<span class="sd">        classes : tuple</span>
+<span class="sd">            Tuple containing class names.</span>
+<span class="sd">        mean : tuple</span>
+<span class="sd">            Tuple containing channel-wise mean for normalization.</span>
+<span class="sd">        std : tuple</span>
+<span class="sd">            Tuple containing channel-wise standard deviation for normalization.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Data</span>
+        <span class="n">mean</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">]</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]</span>
+
+        <span class="n">transform_train</span><span class="p">,</span> <span class="n">transform_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span>
+        <span class="n">transform_train_cur</span> <span class="o">=</span> <span class="n">transform_train</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="n">trainset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">ImageNet</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_train_cur</span><span class="p">)</span>
+
+        <span class="n">testset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">Imagenet</span><span class="p">(</span>
+            <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+        <span class="c1"># TODO: find the actual class lables</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+        <span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+                <span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;shuffle&#39;</span><span class="p">],</span>
+                <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">])</span>
+
+            <span class="k">return</span> <span class="n">trainloader</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">splits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kfold_split</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">transform_train</span><span class="o">=</span><span class="n">transform_train</span><span class="p">,</span>
+                             <span class="n">transform_valid</span><span class="o">=</span><span class="n">transform_test</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">splits</span><span class="p">,</span> <span class="n">testloader</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span></div>
+
+<div class="viewcode-block" id="DatasetLoader.fit"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calls the appropriate dataload method based on the dataset name specified during initialization.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        A DataLoader object for the chosen dataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;cifar10&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cifar10_dataload</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;cifar100&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cifar100_dataload</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;mnist&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">MNIST_dataload</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;fmnist&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">FashionMNIST_dataload</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;imagenet&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Imagenet_dataload</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Dataset not found&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DatasetLoader.kfold_split"><a class="viewcode-back" href="../../AdversarialTensors.html#AdversarialTensors.datasets.DatasetLoader.kfold_split">[docs]</a>    <span class="k">def</span> <span class="nf">kfold_split</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">transform_train</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transform_valid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">         Splits the dataset into training and validation sets for k-fold cross-validation.</span>
+
+<span class="sd">         Parameters</span>
+<span class="sd">         ----------</span>
+<span class="sd">         dataset : torch.utils.data.Dataset</span>
+<span class="sd">             The dataset to be split.</span>
+<span class="sd">         transform_train : torchvision.transforms.Compose, optional</span>
+<span class="sd">             Transformations to be applied on training dataset.</span>
+<span class="sd">         transform_valid : torchvision.transforms.Compose, optional</span>
+<span class="sd">             Transformations to be applied on validation dataset.</span>
+
+<span class="sd">         Returns</span>
+<span class="sd">         -------</span>
+<span class="sd">         all_loaders : list of tuple</span>
+<span class="sd">             List of tuples where each tuple contains a DataLoader for the training set and a DataLoader for the validation set for each fold.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+        <span class="kn">from</span> <span class="nn">subset</span> <span class="kn">import</span> <span class="n">Subset</span>
+        <span class="c1"># do not shuffle kfold for reproducibility</span>
+        <span class="n">folds</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nfolds&#39;</span><span class="p">],</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">all_loaders</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i_fold</span><span class="p">,</span> <span class="p">(</span><span class="n">train_idx</span><span class="p">,</span> <span class="n">valid_idx</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">folds</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">dataset</span><span class="p">)):</span>
+            <span class="n">dataset_train</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">transform_train</span><span class="p">)</span>
+            <span class="n">dataset_valid</span> <span class="o">=</span> <span class="n">Subset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">valid_idx</span><span class="p">,</span> <span class="n">transform_valid</span><span class="p">)</span>
+            <span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span>
+                                                      <span class="n">shuffle</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;shuffle&#39;</span><span class="p">],</span>
+                                                      <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">],</span>
+                                                      <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">validloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset_valid</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span>
+                                                      <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                                      <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;num_workers&#39;</span><span class="p">],</span>
+                                                      <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">all_loaders</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">trainloader</span><span class="p">,</span> <span class="n">validloader</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">all_loaders</span></div></div>
+
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manish Bhattarai, Mehmet Kaymak, Ben Nebgen, Kim Rasmussen, Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright Los Alamos National Laboratory.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,791 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="Python" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>AdversarialTensors.btensor package &#8212; AdversarialTensors 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'AdversarialTensors.btensor';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">AdversarialTensors 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/AdversarialTensors.btensor.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AdversarialTensors.btensor package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor.svd">AdversarialTensors.btensor.svd module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.randomized_range_finder"><code class="docutils literal notranslate"><span class="pre">randomized_range_finder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.randomized_svd"><code class="docutils literal notranslate"><span class="pre">randomized_svd()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.svd_checks"><code class="docutils literal notranslate"><span class="pre">svd_checks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.svd_flip"><code class="docutils literal notranslate"><span class="pre">svd_flip()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.svd_interface"><code class="docutils literal notranslate"><span class="pre">svd_interface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.truncated_svd"><code class="docutils literal notranslate"><span class="pre">truncated_svd()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor.tenalg">AdversarialTensors.btensor.tenalg module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batch_mode_dot"><code class="docutils literal notranslate"><span class="pre">batch_mode_dot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batch_multi_mode_dot"><code class="docutils literal notranslate"><span class="pre">batch_multi_mode_dot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batch_ttm"><code class="docutils literal notranslate"><span class="pre">batch_ttm()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batched_naive_rank_estimator"><code class="docutils literal notranslate"><span class="pre">batched_naive_rank_estimator()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batched_reconstruct"><code class="docutils literal notranslate"><span class="pre">batched_reconstruct()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batched_regress_core"><code class="docutils literal notranslate"><span class="pre">batched_regress_core()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor.tucker">AdversarialTensors.btensor.tucker module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tucker.initialize_tucker"><code class="docutils literal notranslate"><span class="pre">initialize_tucker()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tucker.partial_tucker"><code class="docutils literal notranslate"><span class="pre">partial_tucker()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tucker.tucker"><code class="docutils literal notranslate"><span class="pre">tucker()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="adversarialtensors-btensor-package">
+<h1>AdversarialTensors.btensor package<a class="headerlink" href="#adversarialtensors-btensor-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-AdversarialTensors.btensor.svd">
+<span id="adversarialtensors-btensor-svd-module"></span><h2>AdversarialTensors.btensor.svd module<a class="headerlink" href="#module-AdversarialTensors.btensor.svd" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.svd.randomized_range_finder">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.svd.</span></span><span class="sig-name descname"><span class="pre">randomized_range_finder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/svd.html#randomized_range_finder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.svd.randomized_range_finder" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes an orthonormal matrix (Q) whose range approximates the range of A,  i.e., Q Q^H A ≈ A</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>3D-array</em>) -- </p></li>
+<li><p><strong>n_dims</strong> (<em>int</em><em>, </em><em>dimension</em><em> of </em><em>the returned subspace</em>) -- </p></li>
+<li><p><strong>n_iter</strong> (<em>int</em><em>, </em><em>number</em><em> of </em><em>power iterations to conduct</em><em> (</em><em>default = 2</em><em>)</em>) -- </p></li>
+<li><p><strong>random_state</strong> (<em>{None</em><em>, </em><em>int</em><em>, </em><em>np.random.RandomState}</em>) -- </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Q</strong> -- of shape (batch, A.shape[0], min(n_dims, A.shape[0], A.shape[1]))</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>3D-array</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function is implemented based on Algorith 4.4 in <cite>Finding structure with randomness:
+Probabilistic algorithms for constructing approximate matrix decompositions</cite>
+- Halko et al (2009)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.svd.randomized_svd">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.svd.</span></span><span class="sig-name descname"><span class="pre">randomized_svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_eigenvecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_oversamples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/svd.html#randomized_svd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.svd.randomized_svd" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes a truncated randomized SVD.</p>
+<p>If <cite>n_eigenvecs</cite> is specified, sparse eigendecomposition is used on
+either matrix.dot(matrix.T) or matrix.T.dot(matrix).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>tensor</em>) -- A 2D tensor.</p></li>
+<li><p><strong>n_eigenvecs</strong> (<em>int</em><em>, </em><em>optional</em><em>, </em><em>default is None</em>) -- If specified, number of eigen[vectors-values] to return.</p></li>
+<li><p><strong>n_oversamples</strong> (<em>int</em><em>, </em><em>optional</em><em>, </em><em>default = 5</em>) -- rank overestimation value for finiding subspace with better allignment</p></li>
+<li><p><strong>n_iter</strong> (<em>int</em><em>, </em><em>optional</em><em>, </em><em>default = 2</em>) -- number of power iterations for the <cite>randomized_range_finder</cite> subroutine</p></li>
+<li><p><strong>random_state</strong> (<em>{None</em><em>, </em><em>int</em><em>, </em><em>np.random.RandomState}</em>) -- </p></li>
+<li><p><strong>**kwargs</strong> (<em>optional</em>) -- kwargs are used to absorb the difference of parameters among the other SVD functions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>U</strong> (<em>2-D tensor, shape (matrix.shape[0], n_eigenvecs)</em>) -- Contains the right singular vectors</p></li>
+<li><p><strong>S</strong> (<em>1-D tensor, shape (n_eigenvecs, )</em>) -- Contains the singular values of <cite>matrix</cite></p></li>
+<li><p><strong>V</strong> (<em>2-D tensor, shape (n_eigenvecs, matrix.shape[1])</em>) -- Contains the left singular vectors</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function is implemented based on Algorith 5.1 in <cite>Finding structure with randomness:
+Probabilistic algorithms for constructing approximate matrix decompositions</cite>
+- Halko et al (2009)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.svd.svd_checks">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.svd.</span></span><span class="sig-name descname"><span class="pre">svd_checks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_eigenvecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/svd.html#svd_checks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.svd.svd_checks" title="Permalink to this definition">#</a></dt>
+<dd><p>Runs common checks to all of the SVD methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>3D-array</em>) -- </p></li>
+<li><p><strong>n_eigenvecs</strong> (<em>int</em><em>, </em><em>optional</em><em>, </em><em>default is None</em>) -- if specified, number of eigen[vectors-values] to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>n_eigenvecs</strong> (<em>int</em>) -- the number of eigenvectors to solve for</p></li>
+<li><p><strong>min_dim</strong> (<em>int</em>) -- the minimum dimension of matrix</p></li>
+<li><p><strong>max_dim</strong> (<em>int</em>) -- the maximum dimension of matrix</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.svd.svd_flip">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.svd.</span></span><span class="sig-name descname"><span class="pre">svd_flip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_based_decision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/svd.html#svd_flip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.svd.svd_flip" title="Permalink to this definition">#</a></dt>
+<dd><p>Sign correction to ensure deterministic output from SVD.
+Adjusts the columns of u and the rows of v such that the loadings in the
+columns in u that are largest in absolute value are always positive.
+This function is borrowed from scikit-learn/utils/extmath.py</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> (<em>ndarray</em>) -- u and v are the output of SVD</p></li>
+<li><p><strong>V</strong> (<em>ndarray</em>) -- u and v are the output of SVD</p></li>
+<li><p><strong>u_based_decision</strong> (<em>boolean</em><em>, </em><em>(</em><em>default=True</em><em>)</em>) -- If True, use the columns of u as the basis for sign flipping.
+Otherwise, use the rows of v. The choice of which variable to base the
+decision on is generally algorithm dependent.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>u_adjusted, v_adjusted</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>arrays with the same dimensions as the input.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.svd.svd_interface">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.svd.</span></span><span class="sig-name descname"><span class="pre">svd_interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'truncated_svd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_eigenvecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip_sign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_based_flip_sign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_negative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter_mask_imputation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/svd.html#svd_interface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.svd.svd_interface" title="Permalink to this definition">#</a></dt>
+<dd><p>Dispatching function to various SVD algorithms, alongside additional
+properties such as resolving sign invariance, imputation, and non-negativity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>tensor</em>) -- A 2D tensor.</p></li>
+<li><p><strong>method</strong> (<em>str</em><em>, </em><em>default is 'truncated_svd'</em>) -- Function to use to compute the SVD, acceptable values in tensorly.SVD_FUNS or a callable.</p></li>
+<li><p><strong>n_eigenvecs</strong> (<em>int</em><em>, </em><em>optional</em><em>, </em><em>default is None</em>) -- If specified, number of eigen[vectors-values] to return.</p></li>
+<li><p><strong>flip_sign</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default is True</em>) -- Whether to resolve the sign indeterminacy of SVD.</p></li>
+<li><p><strong>u_based_flip_sign</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default is True</em>) -- Whether the sign indeterminacy should be resolved using U (vs. V).</p></li>
+<li><p><strong>non_negative</strong> (<em>bool</em><em>, </em><em>optional</em><em>, </em><em>default is False</em>) -- Whether to make the SVD results non-negative.</p></li>
+<li><p><strong>nn_type</strong> (<em>str</em><em>, </em><em>default is 'nndsvd'</em>) -- Algorithm to use for converting U to be non-negative.</p></li>
+<li><p><strong>mask</strong> (<em>tensor</em><em>, </em><em>default is None.</em>) -- Array of booleans with the same shape as <code class="docutils literal notranslate"><span class="pre">matrix</span></code>. Should be 0 where
+the values are missing and 1 everywhere else. None if nothing is missing.</p></li>
+<li><p><strong>n_iter_mask_imputation</strong> (<em>int</em><em>, </em><em>default is 5</em>) -- Number of repetitions to apply in missing value imputation.</p></li>
+<li><p><strong>**kwargs</strong> (<em>optional</em>) -- Arguments passed along to individual SVD algorithms.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>U</strong> (<em>2-D tensor, shape (matrix.shape[0], n_eigenvecs)</em>) -- Contains the right singular vectors of <cite>matrix</cite></p></li>
+<li><p><strong>S</strong> (<em>1-D tensor, shape (n_eigenvecs, )</em>) -- Contains the singular values of <cite>matrix</cite></p></li>
+<li><p><strong>V</strong> (<em>2-D tensor, shape (n_eigenvecs, matrix.shape[1])</em>) -- Contains the left singular vectors of <cite>matrix</cite></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.svd.truncated_svd">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.svd.</span></span><span class="sig-name descname"><span class="pre">truncated_svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_eigenvecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/svd.html#truncated_svd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.svd.truncated_svd" title="Permalink to this definition">#</a></dt>
+<dd><p>Computes a truncated SVD on <cite>matrix</cite> using the backends's standard SVD</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>2D-array</em>) -- </p></li>
+<li><p><strong>n_eigenvecs</strong> (<em>int</em><em>, </em><em>optional</em><em>, </em><em>default is None</em>) -- if specified, number of eigen[vectors-values] to return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>U</strong> (<em>2D-array</em>) -- of shape (matrix.shape[0], n_eigenvecs)
+contains the right singular vectors</p></li>
+<li><p><strong>S</strong> (<em>1D-array</em>) -- of shape (n_eigenvecs, )
+contains the singular values of <cite>matrix</cite></p></li>
+<li><p><strong>V</strong> (<em>2D-array</em>) -- of shape (n_eigenvecs, matrix.shape[1])
+contains the left singular vectors</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.btensor.tenalg">
+<span id="adversarialtensors-btensor-tenalg-module"></span><h2>AdversarialTensors.btensor.tenalg module<a class="headerlink" href="#module-AdversarialTensors.btensor.tenalg" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tenalg.batch_mode_dot">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tenalg.</span></span><span class="sig-name descname"><span class="pre">batch_mode_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tenalg.html#batch_mode_dot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tenalg.batch_mode_dot" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform batched mode-dot product along a specific mode.</p>
+<p>Parameters:
+- X: The input tensor
+- v: The matrix to be multiplied
+- mode: The mode along which to multiply
+- transpose: Whether to transpose the matrix v before multiplication</p>
+<p>Returns:
+- The result of the mode-dot operation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tenalg.batch_multi_mode_dot">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tenalg.</span></span><span class="sig-name descname"><span class="pre">batch_multi_mode_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tenalg.html#batch_multi_mode_dot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tenalg.batch_multi_mode_dot" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform batched multi-mode dot product.</p>
+<p>Parameters:
+- X: The input tensor
+- v: The list of matrices to be multiplied
+- modes: The modes along which to multiply each matrix
+- transpose: Whether to transpose the matrices before multiplication
+- skip: If specified, the mode to skip during multiplication</p>
+<p>Returns:
+- The result of the multi-mode dot operation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tenalg.batch_ttm">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tenalg.</span></span><span class="sig-name descname"><span class="pre">batch_ttm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tenalg.html#batch_ttm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tenalg.batch_ttm" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform batched tensor-times-matrix (TTM) multiplication along given mode(s).</p>
+<p>Parameters:
+- X: The input tensor
+- v: The matrix (or list of matrices) to be multiplied
+- mode: The mode(s) along which to multiply
+- transpose: Whether to transpose the matrix before multiplication</p>
+<p>Returns:
+- The result of the TTM operation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tenalg.batched_naive_rank_estimator">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tenalg.</span></span><span class="sig-name descname"><span class="pre">batched_naive_rank_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eigsumthresh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvals</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tenalg.html#batched_naive_rank_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tenalg.batched_naive_rank_estimator" title="Permalink to this definition">#</a></dt>
+<dd><p>Batched estimation of tensor rank based on a given eigenvalue sum threshold.</p>
+<p>Parameters:
+- eigsumthresh: The eigenvalue sum threshold
+- eigvals: The eigenvalues</p>
+<p>Returns:
+- Estimated ranks for each sample in the batch</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tenalg.batched_reconstruct">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tenalg.</span></span><span class="sig-name descname"><span class="pre">batched_reconstruct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tenalg.html#batched_reconstruct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tenalg.batched_reconstruct" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform batched reconstruction of tensor from its factors.</p>
+<p>Parameters:
+- data: The input tensor
+- factors: The factor matrices</p>
+<p>Returns:
+- The reconstructed tensor</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tenalg.batched_regress_core">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tenalg.</span></span><span class="sig-name descname"><span class="pre">batched_regress_core</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tenalg.html#batched_regress_core"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tenalg.batched_regress_core" title="Permalink to this definition">#</a></dt>
+<dd><p>Perform batched regression on the core tensor.</p>
+<p>Parameters:
+- data: The input tensor
+- factors: The factor matrices</p>
+<p>Returns:
+- The core tensor after regression</p>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.btensor.tucker">
+<span id="adversarialtensors-btensor-tucker-module"></span><h2>AdversarialTensors.btensor.tucker module<a class="headerlink" href="#module-AdversarialTensors.btensor.tucker" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tucker.initialize_tucker">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tucker.</span></span><span class="sig-name descname"><span class="pre">initialize_tucker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'truncated_svd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_negative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tucker.html#initialize_tucker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tucker.initialize_tucker" title="Permalink to this definition">#</a></dt>
+<dd><p>Initializes core and factors used in the Tucker decomposition.
+The type of initialization is set using the texttt{init} parameter.
+If texttt{init} is set to 'random', factor matrices are initialized using texttt{random_state}.
+If texttt{init} is set to 'svd', the ( m )th factor matrix is initialized using the
+texttt{rank} left singular vectors of the ( m )th unfolding of the input tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensor</strong> (<em>torch.Tensor</em>) -- Input tensor to be decomposed.</p></li>
+<li><p><strong>rank</strong> (<em>int</em>) -- Number of components.</p></li>
+<li><p><strong>modes</strong> (<em>list</em><em> of </em><em>int</em>) -- List of modes for Tucker decomposition.</p></li>
+<li><p><strong>random_state</strong> (<em>int</em>) -- Random seed for initialization.</p></li>
+<li><p><strong>init</strong> (<em>{'svd'</em><em>, </em><em>'random'}</em><em>, </em><em>optional</em>) -- Type of initialization ('svd' or 'random').</p></li>
+<li><p><strong>svd</strong> (<em>str</em><em>, </em><em>default is 'truncated_svd'</em>) -- Function to use for SVD, acceptable values in tensorly.SVD_FUNS.</p></li>
+<li><p><strong>non_negative</strong> (<em>bool</em><em>, </em><em>default is False</em>) -- If True, non-negative factors are returned. Has no effect for now.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing:
+- core (torch.Tensor): Initialized core tensor.
+- factors (list): List of initialized factor matrices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tucker.partial_tucker">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tucker.</span></span><span class="sig-name descname"><span class="pre">partial_tucker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'truncated_svd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svd_mask_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tucker.html#partial_tucker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tucker.partial_tucker" title="Permalink to this definition">#</a></dt>
+<dd><p>Partial tucker decomposition via Higher Order Orthogonal Iteration (HOI)</p>
+<blockquote>
+<div><p>Decomposes <cite>tensor</cite> into a Tucker decomposition exclusively along the provided modes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensor</strong> (<em>ndarray</em>) -- </p></li>
+<li><p><strong>rank</strong> (<em>None</em><em>, </em><em>int</em><em> or </em><em>int list</em>) -- size of the core tensor, <code class="docutils literal notranslate"><span class="pre">(len(ranks)</span> <span class="pre">==</span> <span class="pre">tensor.ndim)</span></code>
+if int, the same rank is used for all modes</p></li>
+<li><p><strong>modes</strong> (<em>None</em><em>, </em><em>int list</em>) -- list of the modes on which to perform the decomposition</p></li>
+<li><p><strong>n_iter_max</strong> (<em>int</em>) -- maximum number of iteration</p></li>
+<li><p><strong>init</strong> (<em>{'svd'</em><em>, </em><em>'random'}</em><em>, or </em><em>TuckerTensor optional</em>) -- if a TuckerTensor is provided, this is used for initialization</p></li>
+<li><p><strong>svd</strong> (<em>str</em><em>, </em><em>default is 'truncated_svd'</em>) -- function to use to compute the SVD,
+acceptable values in tensorly.tenalg.svd.SVD_FUNS</p></li>
+<li><p><strong>tol</strong> (<em>float</em><em>, </em><em>optional</em>) -- tolerance: the algorithm stops when the variation in
+the reconstruction error is less than the tolerance</p></li>
+<li><p><strong>random_state</strong> (<em>{None</em><em>, </em><em>int</em><em>, </em><em>np.random.RandomState}</em>) -- </p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) -- level of verbosity</p></li>
+<li><p><strong>mask</strong> (<em>ndarray</em>) -- array of booleans with the same shape as <code class="docutils literal notranslate"><span class="pre">tensor</span></code> should be 0 where
+the values are missing and 1 everywhere else. Note:  if tensor is
+sparse, then mask should also be sparse with a fill value of 1 (or
+True).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>core</strong> (<em>ndarray</em>) -- core tensor of the Tucker decomposition</p></li>
+<li><p><strong>factors</strong> (<em>ndarray list</em>) -- list of factors of the Tucker decomposition.
+with <code class="docutils literal notranslate"><span class="pre">core.shape[i]</span> <span class="pre">==</span> <span class="pre">(tensor.shape[i],</span> <span class="pre">ranks[i])</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">modes</span></code></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="AdversarialTensors.btensor.tucker.tucker">
+<span class="sig-prename descclassname"><span class="pre">AdversarialTensors.btensor.tucker.</span></span><span class="sig-name descname"><span class="pre">tucker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_factors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'svd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'truncated_svd'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AdversarialTensors/btensor/tucker.html#tucker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#AdversarialTensors.btensor.tucker.tucker" title="Permalink to this definition">#</a></dt>
+<dd><p>Tucker decomposition via Higher Order Orthogonal Iteration (HOI)</p>
+<blockquote>
+<div><p>Decomposes <cite>tensor</cite> into a Tucker decomposition:
+<code class="docutils literal notranslate"><span class="pre">tensor</span> <span class="pre">=</span> <span class="pre">[|</span> <span class="pre">core;</span> <span class="pre">factors[0],</span> <span class="pre">...factors[-1]</span> <span class="pre">|]</span></code> <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensor</strong> (<em>torch.tensor</em>) -- </p></li>
+<li><p><strong>rank</strong> (<em>None</em><em>, </em><em>int</em><em> or </em><em>int list</em>) -- size of the core tensor, <code class="docutils literal notranslate"><span class="pre">(len(ranks)</span> <span class="pre">==</span> <span class="pre">tensor.ndim</span> <span class="pre">-</span> <span class="pre">1)</span></code>
+if int, the same rank is used for all modes</p></li>
+<li><p><strong>fixed_factors</strong> (<em>int list</em><em> or </em><em>None</em><em>, </em><em>default is None</em>) -- if not None, list of modes for which to keep the factors fixed.
+Only valid if a Tucker tensor is provided as init.</p></li>
+<li><p><strong>n_iter_max</strong> (<em>int</em>) -- maximum number of iteration</p></li>
+<li><p><strong>init</strong> (<em>{'svd'</em><em>, </em><em>'random'}</em><em>, </em><em>optional</em>) -- </p></li>
+<li><p><strong>return_errors</strong> (<em>boolean</em>) -- Indicates whether the algorithm should return all reconstruction errors
+and computation time of each iteration or not
+Default: False</p></li>
+<li><p><strong>svd</strong> (<em>str</em><em>, </em><em>default is 'truncated_svd'</em>) -- function to use to compute the SVD,
+acceptable values in tensorly.SVD_FUNS</p></li>
+<li><p><strong>tol</strong> (<em>float</em><em>, </em><em>optional</em>) -- tolerance: the algorithm stops when the variation in
+the reconstruction error is less than the tolerance</p></li>
+<li><p><strong>random_state</strong> (<em>{None</em><em>, </em><em>int</em><em>, </em><em>np.random.RandomState}</em>) -- </p></li>
+<li><p><strong>mask</strong> (<em>ndarray</em>) -- array of booleans with the same shape as <code class="docutils literal notranslate"><span class="pre">tensor</span></code> should be 0 where
+the values are missing and 1 everywhere else. Note:  if tensor is
+sparse, then mask should also be sparse with a fill value of 1 (or
+True).</p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) -- level of verbosity</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>core</strong> (torch.tensor of size <cite>ranks</cite>) -- core tensor of the Tucker decomposition</p></li>
+<li><p><strong>factors</strong> (<em>torch.tensor list</em>) -- list of factors of the Tucker decomposition.
+Its <code class="docutils literal notranslate"><span class="pre">i</span></code>-th element is of shape <code class="docutils literal notranslate"><span class="pre">(tensor.shape[i],</span> <span class="pre">ranks[i])</span></code></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>tl.G.Kolda and B.W.Bader, &quot;Tensor Decompositions and Applications&quot;,
+SIAM REVIEW, vol. 51, n. 3, pp. 455-500, 2009.</p>
+</aside>
+</aside>
+</dd></dl>
+
+</section>
+<section id="module-AdversarialTensors.btensor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-AdversarialTensors.btensor" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor.svd">AdversarialTensors.btensor.svd module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.randomized_range_finder"><code class="docutils literal notranslate"><span class="pre">randomized_range_finder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.randomized_svd"><code class="docutils literal notranslate"><span class="pre">randomized_svd()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.svd_checks"><code class="docutils literal notranslate"><span class="pre">svd_checks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.svd_flip"><code class="docutils literal notranslate"><span class="pre">svd_flip()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.svd_interface"><code class="docutils literal notranslate"><span class="pre">svd_interface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.svd.truncated_svd"><code class="docutils literal notranslate"><span class="pre">truncated_svd()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor.tenalg">AdversarialTensors.btensor.tenalg module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batch_mode_dot"><code class="docutils literal notranslate"><span class="pre">batch_mode_dot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batch_multi_mode_dot"><code class="docutils literal notranslate"><span class="pre">batch_multi_mode_dot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batch_ttm"><code class="docutils literal notranslate"><span class="pre">batch_ttm()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batched_naive_rank_estimator"><code class="docutils literal notranslate"><span class="pre">batched_naive_rank_estimator()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batched_reconstruct"><code class="docutils literal notranslate"><span class="pre">batched_reconstruct()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tenalg.batched_regress_core"><code class="docutils literal notranslate"><span class="pre">batched_regress_core()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor.tucker">AdversarialTensors.btensor.tucker module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tucker.initialize_tucker"><code class="docutils literal notranslate"><span class="pre">initialize_tucker()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tucker.partial_tucker"><code class="docutils literal notranslate"><span class="pre">partial_tucker()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#AdversarialTensors.btensor.tucker.tucker"><code class="docutils literal notranslate"><span class="pre">tucker()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-AdversarialTensors.btensor">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Manish Bhattarai, Mehmet Kaymak, Ben Nebgen, Kim Rasmussen, Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright Los Alamos National Laboratory.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
