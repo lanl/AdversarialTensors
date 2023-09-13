@@ -15,25 +15,25 @@ This generator provides robust defense against unseen attacks.
 NNSVD and NMF
 
 <p align="center">
-  <img width="500" height="322" src="docs/denoising.png">
+  <img width="500" height="322" src="docs/_images/denoising.png">
 </p>
 * Ability to denoise image single/batches/all.
 <p align="center">
-  <img width="500" height="156" src="docs/inference.png">
+  <img width="500" height="156" src="docs/_images/inference.png">
 </p>
 * Employs attacks such as AutoAttack, FGSM, PGD, BIM, DeepFool. 
 * Ability to perform white-box/black-box attacks.
 
 <p float="center">
-  <img width="400" height="270" src="docs/white_box.png">
-  <img width="400" height="211" src="docs/black_box.png">
+  <img width="400" height="270" src="docs/_images/white_box.png">
+  <img width="400" height="211" src="docs/_images/black_box.png">
 </p>
 
 * Ability to perform adversarial training.
 
 <p float="center">
-  <img width="400" height="270" src="docs/white_box_adv_train.png">
-  <img width="400" height="211" src="docs/black_box_adv_train.png">
+  <img width="400" height="270" src="docs/_images/white_box_adv_train.png">
+  <img width="400" height="211" src="docs/_images/black_box_adv_train.png">
 </p>
 
 * Works on Cifar10/Cifar100/Imagenet/Tiny-Imagenet/MNIST/Fashion-MNIST. 
