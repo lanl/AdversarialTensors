@@ -1,0 +1,16 @@
+numpy
+matplotlib
+scikit-learn
+pandas
+opencv-python
+torch
+torchvision
+ray[tune]
+optuna
+lightning
+scikit-learn
+tensorly
+foolbox
+pandas
+torchattacks
+scheduler
